@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "capacity": 335872,
+    "target_bits": 2,
+    "draft_bits": 0,
+    "label": "dflash-recheck335872",
+    "geometry_only": false,
+    "no_draft": false
+  },
+  "state": "failed",
+  "started_epoch": 1793041213.1638997,
+  "target_cache_bytes": 11177820160,
+  "draft_cache_bytes": 2063597568,
+  "cache_bytes_per_token": 39424.0,
+  "model_max_position_embeddings": 524288,
+  "memory_before_load": {
+    "free_bytes": 30728585216,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 0,
+    "torch_reserved_bytes": 0,
+    "torch_peak_allocated_bytes": 0,
+    "torch_peak_reserved_bytes": 0
+  },
+  "memory_after_target": {
+    "free_bytes": 4835049472,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 25743446016,
+    "torch_reserved_bytes": 25755123712,
+    "torch_peak_allocated_bytes": 25743446016,
+    "torch_peak_reserved_bytes": 25755123712
+  },
+  "memory_after_models": {
+    "free_bytes": 598802432,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 29854389760,
+    "torch_reserved_bytes": 29991370752,
+    "torch_peak_allocated_bytes": 30290073088,
+    "torch_peak_reserved_bytes": 30347886592
+  },
+  "error": "OutOfMemoryError('CUDA out of memory. Tried to allocate 224.00 MiB. GPU 0 has a total capacity of 31.44 GiB of which 225.06 MiB is free. Process 2826 has 16.62 MiB memory in use. Process 196182 has 607.55 MiB memory in use. Including non-PyTorch memory, this process has 28.88 GiB memory in use. Of the allocated memory 28.07 GiB is allocated by PyTorch, and 118.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)')",
+  "completed_epoch": 1793041215.115103
+}

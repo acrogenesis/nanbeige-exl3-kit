@@ -1,0 +1,27 @@
+{
+  "state": "failed",
+  "preset": "max",
+  "started_epoch": 1793042116.942959,
+  "target": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-EXL3/snapshots/56a23706262458b23ba7dde5ba1eea053a109544",
+  "draft": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-DFlash2/snapshots/4b7c7f8509d5286b7264db096d764b4a163d74f4",
+  "capacity": 196608,
+  "weight_bpw": 3.55,
+  "kv_bits": 4,
+  "draft_kv_bits": 4,
+  "sparse_draft_head": 16384,
+  "batch_size": 1,
+  "concurrency": 1,
+  "temperature": 0,
+  "thinking": false,
+  "eos_policy": "suppressed until 2048 tokens for fixed-length throughput",
+  "versions": {
+    "exllamav3": "1.6.5+cu132.torch2.13.0",
+    "torch": "2.13.0+cu132",
+    "transformers": "4.57.6"
+  },
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "results": [],
+  "prompt_sha256": "8b5f4cd519a18460e5cdb885332618e6e62ab8e32572cbaa464f66f33151679d",
+  "sparse_profile_seed_sha256": "cfa21c7c9c0b7dccaf8e2f181c85c94c1bbb69ad2ad1303480c281f8608fc6c9",
+  "error": "AcceleratorError(\"CUDA error: out of memory\\nSearch for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\\nFor more detailed error information, run with CUDA_LOG_FILE=stderr\\n\")"
+}

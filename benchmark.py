@@ -101,13 +101,14 @@ def main():
     assert a.repeats >= 1
     global TARGET, DRAFT
     from model_paths import resolve_models
-    models = resolve_models(require_draft=is_fast, target_dir=a.target_dir, draft_dir=a.draft_dir)
+    models = resolve_models(require_draft=True, target_dir=a.target_dir, draft_dir=a.draft_dir)
     TARGET = Path(models["target"]["path"])
-    DRAFT = Path(models["draft"]["path"]) if is_fast else None
-    capacity = 8192 if is_fast else 480256
+    DRAFT = Path(models["draft"]["path"])
+    capacity = 8192 if is_fast else 180224
     report = {"state": "loading", "preset": a.preset, "started_epoch": time.time(),
-        "target": str(TARGET), "draft": str(DRAFT) if is_fast else None,
-        "capacity": capacity, "weight_bpw": 3.55, "kv_bits": 0 if is_fast else 2,
+        "target": str(TARGET), "draft": str(DRAFT),
+        "capacity": capacity, "weight_bpw": 3.55, "kv_bits": 0 if is_fast else 4,
+        "draft_kv_bits": 0 if is_fast else 4, "sparse_draft_head": 16384,
         "batch_size": 1, "concurrency": 1, "temperature": 0, "thinking": False,
         "eos_policy": "suppressed until 2048 tokens for fixed-length throughput",
         "versions": {n: importlib.metadata.version(n) for n in ["exllamav3", "torch", "transformers"]},
@@ -117,7 +118,7 @@ def main():
     hf = PreTrainedTokenizerFast.from_pretrained(str(TARGET), local_files_only=True)
     ids, digest = make_prompt(hf)
     report["prompt_sha256"] = digest
-    if is_fast:
+    if DRAFT is not None:
         import exllamav3.modules.sparse_head as sh
         profile_dir = ROOT / "sparse-profile"
         profile_dir.mkdir(exist_ok=True)
@@ -129,16 +130,16 @@ def main():
         sh.TOKEN_STATS_DIR = str(profile_dir)
     config = Config.from_directory(str(TARGET))
     model = Model.from_config(config)
-    kwargs = {} if is_fast else {"layer_type": CacheLayer_quant, "k_bits": 2, "v_bits": 2}
+    kwargs = {} if is_fast else {"layer_type": CacheLayer_quant, "k_bits": 4, "v_bits": 4}
     cache = Cache(model, max_num_tokens=capacity, **kwargs)
     draft = draft_cache = dc = None
     try:
         model.load(device=torch.device("cuda:0"), max_batch_size=1, max_chunk_size=2048, max_output_size=2048)
         tokenizer = Tokenizer.from_config(config)
-        if is_fast:
+        if DRAFT is not None:
             dc = Config.from_directory(str(DRAFT))
             draft = Model.from_config(dc)
-            draft_cache = Cache(draft, max_num_tokens=capacity)
+            draft_cache = Cache(draft, max_num_tokens=capacity, **kwargs)
             draft.load(device=torch.device("cuda:0"), max_batch_size=1, max_chunk_size=2048, max_output_size=2048)
             draft.attach_to(model)
         report["state"] = "running"
@@ -147,7 +148,7 @@ def main():
             generator = Generator(model=model, cache=cache, tokenizer=tokenizer,
                 draft_model=draft, draft_cache=draft_cache, num_draft_tokens=7,
                 dynamic_draft_tokens=False, max_batch_size=1, max_chunk_size=2048,
-                record_draft_stats=True, sparse_draft_head=16384 if is_fast else 0)
+                record_draft_stats=True, sparse_draft_head=16384)
             row = generate(generator, hf, ids, index)
             report["results"].append(row)
             save(output_path, report)

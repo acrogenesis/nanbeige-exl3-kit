@@ -1,0 +1,47 @@
+{
+  "state": "passed",
+  "capacity": 180224,
+  "fixed_workload": {
+    "actual_input": 2842,
+    "actual_output": 2048,
+    "measured_requests": 3,
+    "medians": {
+      "output_tokens_s": 115.13590556909186,
+      "prefill_tokens_s": 3239.416026290981,
+      "prompt_tokens_per_ttft_s": 3173.2353334115405,
+      "ttft_ms": 895.6158939981833,
+      "wall_s": 18.680511616999866,
+      "total_tokens_s": 261.77013243844686
+    },
+    "range": [
+      115.04785909491693,
+      115.25626484565302
+    ]
+  },
+  "full_workload": {
+    "actual_input": 179705,
+    "actual_output": 256,
+    "occupied_tokens": 179961,
+    "output_tokens_s": 23.405917509173715,
+    "prefill_tokens_s": 1073.8179873544425,
+    "ttft_ms": 167400.48994199606,
+    "final_cuda_free_MiB": 1017.125
+  },
+  "draft_enabled_in_all_requests": true,
+  "native_draft_activity_verified": true,
+  "counts_timings_prompt_hashes_and_exact_retrieval_verified": true,
+  "limits": "One synthetic long-context retrieval request per configuration; no broad KV quality evaluation or BF16 parity claim.",
+  "larger_2bit_trial": {
+    "capacity": 344064,
+    "exact_retrieval": "2/3",
+    "usable_preset": false,
+    "result": "full344k-b2-dflash.json",
+    "audit": "full344k-b2-dflash-audit.json"
+  },
+  "larger_4bit_trial": {
+    "capacity": 196608,
+    "exact_retrieval": "3/3",
+    "fixed_length_warmup": "out of memory",
+    "usable_preset": false
+  }
+}

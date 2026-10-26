@@ -3,7 +3,9 @@ import argparse
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
+import shutil
 import sys
 import time
 
@@ -84,15 +86,25 @@ def main():
     models = resolve_models(require_draft=not a.no_draft, target_dir=a.target_dir, draft_dir=a.draft_dir)
     TARGET = Path(models["target"]["path"])
     DRAFT = Path(models["draft"]["path"]) if not a.no_draft else None
+    reserve = 256 + (0 if a.no_draft else 7)
     if a.input_tokens is None:
-        a.input_tokens = a.capacity - a.output_tokens - 256
-    assert a.input_tokens + a.output_tokens + 256 <= a.capacity
+        a.input_tokens = a.capacity - a.output_tokens - reserve
+    assert a.input_tokens + a.output_tokens + reserve <= a.capacity
     report = {"settings": vars(a), "state": "preparing", "started_epoch": time.time(),
               "target_dir": str(TARGET), "draft_dir": None if a.no_draft else str(DRAFT),
-              "versions": {}}
+              "versions": {}, "sparse_draft_head": 0 if a.no_draft else 16384,
+              "kv_staging_pages": os.environ.get("EXL3_QC_STAGING_PAGES")}
     import importlib.metadata
     report["versions"] = {n: importlib.metadata.version(n) for n in ["torch", "exllamav3", "transformers"]}
     path = ROOT / (a.label + ".json")
+    if not a.no_draft:
+        import exllamav3.modules.sparse_head as sh
+        profile_dir = ROOT / (a.label + "-token-stats")
+        profile_dir.mkdir(exist_ok=True)
+        source = Path(__file__).resolve().parent / "profiles/sparse-seed.pt"
+        shutil.copyfile(source, profile_dir / "49496f93c239aa4e.pt")
+        sh.TOKEN_STATS_DIR = str(profile_dir)
+        report["sparse_profile_seed_sha256"] = hashlib.sha256(source.read_bytes()).hexdigest()
     save(path, report)
     hf = PreTrainedTokenizerFast.from_pretrained(str(TARGET), local_files_only=True)
     ids, markers = prompt_ids(hf, a.input_tokens)

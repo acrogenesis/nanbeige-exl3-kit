@@ -1,9 +1,11 @@
 {
   "target": {
-    "repo_id": "acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
-    "revision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+    "repo_id": "ProCreations/Nanbeige4.3-33B-EXL3",
+    "revision": "56a23706262458b23ba7dde5ba1eea053a109544",
     "upstream_repo_id": "ProCreations/Nanbeige4.3-33B-EXL3",
-    "upstream_revision": "56a23706262458b23ba7dde5ba1eea053a109544"
+    "upstream_revision": "56a23706262458b23ba7dde5ba1eea053a109544",
+    "mirror_repo_id": "acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
+    "mirror_revision": "d96b78f8af518f7f347da7f8919c29f10c8efeea"
   },
   "draft": {
     "repo_id": "ProCreations/Nanbeige4.3-33B-DFlash2",

@@ -1,0 +1,12 @@
+{
+  "max": {
+    "sampled_peak_total_VRAM_MiB": 31165.0,
+    "samples_1Hz": 79,
+    "includes_desktop": true
+  },
+  "full180k-b4-dflash": {
+    "sampled_peak_total_VRAM_MiB": 31183.0,
+    "samples_1Hz": 182,
+    "includes_desktop": true
+  }
+}

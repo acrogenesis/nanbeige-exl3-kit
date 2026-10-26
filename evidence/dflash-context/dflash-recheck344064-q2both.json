@@ -1,0 +1,83 @@
+{
+  "settings": {
+    "capacity": 344064,
+    "target_bits": 2,
+    "draft_bits": 2,
+    "label": "dflash-recheck344064-q2both",
+    "geometry_only": false,
+    "no_draft": false
+  },
+  "state": "passed",
+  "started_epoch": 1793041255.0916483,
+  "target_cache_bytes": 11450449920,
+  "draft_cache_bytes": 330301440,
+  "cache_bytes_per_token": 34240.0,
+  "model_max_position_embeddings": 524288,
+  "memory_before_load": {
+    "free_bytes": 30665474048,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 0,
+    "torch_reserved_bytes": 0,
+    "torch_peak_allocated_bytes": 0,
+    "torch_peak_reserved_bytes": 0
+  },
+  "memory_after_target": {
+    "free_bytes": 4499308544,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 26016075776,
+    "torch_reserved_bytes": 26027753472,
+    "torch_peak_allocated_bytes": 26016075776,
+    "torch_peak_reserved_bytes": 26027753472
+  },
+  "memory_after_models": {
+    "free_bytes": 1982726144,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 28393723392,
+    "torch_reserved_bytes": 28544335872,
+    "torch_peak_allocated_bytes": 28829406720,
+    "torch_peak_reserved_bytes": 28858908672
+  },
+  "smoke_0": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 0,
+    "eos_reason": "max_new_tokens",
+    "text": " changes",
+    "full_completion": "A **Write-Ahead Log (WAL)** is a fundamental architectural component in database systems. It ensures **durability** and **crash consistency**, adhering to the **ACID** properties (Atomicity, Consistency, Isolation, Durability).\n\nBelow is a detailed explanation of the architecture and recovery behavior of a database WAL.\n\n---\n\n### 1. Core Architecture of a Write-Ahead Log\n\n\nThe primary design principle behind a WAL is the **Write-Ahead Log Pattern**:\n> *Before a transaction modifies actual database pages/blocks in persistent memory or disk, the changes",
+    "new_tokens": 128,
+    "prompt_tokens": 51,
+    "time_enqueued": 0.001280069351196289,
+    "time_prefill": 0.3861403465270996,
+    "time_generate": 1.649611473083496,
+    "cached_pages": 0,
+    "cached_tokens": 0,
+    "accepted_draft_tokens": 39,
+    "rejected_draft_tokens": 584
+  },
+  "smoke_1": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 1,
+    "eos_reason": "max_new_tokens",
+    "text": " changes",
+    "full_completion": "A **Write-Ahead Log (WAL)** is a fundamental architectural component in database systems. It ensures **durability** and **crash consistency**, adhering to the **ACID** properties (Atomicity, Consistency, Isolation, Durability).\n\nBelow is a detailed explanation of the architecture and recovery behavior of a database WAL.\n\n---\n\n### 1. Core Architecture of a Write-Ahead Log\n\n\nThe primary design principle behind a WAL is the **Write-Ahead Log Pattern**:\n> *Before a transaction modifies actual database pages/blocks in persistent memory or disk, the changes",
+    "new_tokens": 128,
+    "prompt_tokens": 51,
+    "time_enqueued": 0.0012328624725341797,
+    "time_prefill": 0.0020699501037597656,
+    "time_generate": 1.5569794178009033,
+    "cached_pages": 0,
+    "cached_tokens": 50,
+    "accepted_draft_tokens": 40,
+    "rejected_draft_tokens": 576
+  },
+  "memory_after_smoke": {
+    "free_bytes": 1032716288,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 28471976960,
+    "torch_reserved_bytes": 29370613760,
+    "torch_peak_allocated_bytes": 29184187392,
+    "torch_peak_reserved_bytes": 29370613760
+  },
+  "completed_epoch": 1793041262.1400273
+}

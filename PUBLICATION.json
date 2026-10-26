@@ -25,7 +25,7 @@
     },
     "completed_epoch": 1793027011.060116,
     "source_files_byte_identical": true,
-    "model_card_update_commit": "62fc9e0460ea2c2b17a00e9f19d08362c46439a2"
+    "model_card_update_commit": "c35764b078dbff54d3683fff6d3707f5c6b15473"
   },
   "engine": {
     "source": "https://github.com/turboderp-org/exllamav3",
@@ -35,7 +35,26 @@
   "kit": {
     "url": "https://github.com/acrogenesis/nanbeige-exl3-kit",
     "initial_commit": "5ed9c48984d95f62d386055248a7000245c272c5",
-    "portable_validation": "evidence/portable-validation/kit-validation.json"
+    "portable_validation": "evidence/portable-validation/kit-validation.json",
+    "current_presets": {
+      "fast": {
+        "capacity": 8192,
+        "draft_enabled": true,
+        "kv_bits": 0,
+        "draft_kv_bits": 0,
+        "localmaxxing_run_key": "fast"
+      },
+      "max": {
+        "capacity": 180224,
+        "draft_enabled": true,
+        "kv_bits": 4,
+        "draft_kv_bits": 4,
+        "localmaxxing_run_key": "max_dflash",
+        "full_context_run_key": "full_dflash"
+      }
+    },
+    "dflash_validation": "evidence/dflash-context/audit.json",
+    "default_target_source": "Pinned original ProCreations; same weights as attributed benchmark mirror"
   },
   "localmaxxing": {
     "url": "https://www.localmaxxing.com/en/models/acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
@@ -74,10 +93,41 @@
         "outputTokens": 256,
         "contextLength": 480256,
         "modelRevision": "d96b78f8af518f7f347da7f8919c29f10c8efeea"
+      },
+      "max_dflash": {
+        "id": "cmvpncx7w029ong01qcn9q4sb",
+        "status": "APPROVED",
+        "tokSOut": 115.1359055690919,
+        "tokSPrefill": 3239.416026290981,
+        "ttftMs": 895.6158939981833,
+        "promptTokens": 2842,
+        "outputTokens": 2048,
+        "contextLength": 180224,
+        "modelRevision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+        "draft_enabled": true,
+        "kv_cache": "q4 target/draft"
+      },
+      "full_dflash": {
+        "id": "cmvpncxju029rng01nx15cpot",
+        "status": "APPROVED",
+        "tokSOut": 23.40591750917372,
+        "tokSPrefill": 1073.817987354442,
+        "ttftMs": 167400.4899419961,
+        "promptTokens": 179705,
+        "outputTokens": 256,
+        "contextLength": 180224,
+        "modelRevision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+        "draft_enabled": true,
+        "kv_cache": "q4 target/draft"
       }
     },
     "readback_verified": true,
-    "report_url": "https://www.localmaxxing.com/en/models/acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw/reports/cmvpehkhi0264ng01auzavjoo"
+    "report_url": "https://www.localmaxxing.com/en/models/acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw/reports/cmvpehkhi0264ng01auzavjoo",
+    "historical_no_draft_run_keys": [
+      "max",
+      "full"
+    ],
+    "latest_report_payload": "publication/lmx-dflash-report-update-payload.json"
   },
   "key_handling": "API key never copied to public files; source .env remains local and untracked in Strata."
 }

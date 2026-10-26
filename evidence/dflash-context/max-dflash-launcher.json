@@ -1,0 +1,185 @@
+{
+  "name": "chat",
+  "measured": false,
+  "seed": 20261025,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "thinking": false,
+  "input_token_ids": [
+    166100,
+    8481,
+    13,
+    18215,
+    19433,
+    154675,
+    152372,
+    21863,
+    152672,
+    57437,
+    162001,
+    46372,
+    152590,
+    5004,
+    15825,
+    152435,
+    3237,
+    3942,
+    152389,
+    166101,
+    13,
+    166100,
+    2714,
+    13,
+    11859,
+    849,
+    269,
+    20083,
+    8710,
+    816,
+    290,
+    152343,
+    152367,
+    152413,
+    753,
+    152343,
+    152375,
+    152385,
+    152361,
+    166101,
+    13,
+    166100,
+    66354,
+    13,
+    166103,
+    13,
+    13,
+    166104,
+    13,
+    13
+  ],
+  "prompt_tokens": 50,
+  "output_tokens": 4,
+  "output_token_ids": [
+    152385,
+    152398,
+    152367,
+    166101
+  ],
+  "text": "391<|im_end|>",
+  "events": [
+    {
+      "seconds": 0.43611586300539784,
+      "token_ids": [
+        152385
+      ]
+    },
+    {
+      "seconds": 0.45644054100557696,
+      "token_ids": [
+        152398
+      ]
+    },
+    {
+      "seconds": 0.4731449620012427,
+      "token_ids": [
+        152367
+      ]
+    },
+    {
+      "seconds": 0.489920804000576,
+      "token_ids": [
+        166101
+      ]
+    }
+  ],
+  "ttft_s": 0.43611586300539784,
+  "wall_s": 0.48995390499476343,
+  "decode_s": 0.053804940995178185,
+  "decode_tokens_s": 55.756961061788914,
+  "end_to_end_tokens_s": 8.164033308485932,
+  "terminal": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 0,
+    "eos_reason": "stop_token",
+    "eos_triggering_token_id": 166101,
+    "eos_triggering_token_str": "<|im_end|>",
+    "full_completion": "391",
+    "new_tokens": 4,
+    "prompt_tokens": 50,
+    "time_enqueued": 0.0006504058837890625,
+    "time_prefill": 0.37722206115722656,
+    "time_generate": 0.11166644096374512,
+    "cached_pages": 0,
+    "cached_tokens": 0,
+    "accepted_draft_tokens": 0,
+    "rejected_draft_tokens": 28
+  },
+  "draft_stats": [
+    [
+      1,
+      7,
+      0
+    ],
+    [
+      2,
+      7,
+      0
+    ],
+    [
+      3,
+      7,
+      0
+    ],
+    [
+      4,
+      7,
+      0
+    ]
+  ],
+  "gpu_peak_allocated_bytes": 28511001600,
+  "gpu_peak_reserved_bytes": 28741468160,
+  "sparse_head_stats": {
+    "k": 7168,
+    "capacity": 16384,
+    "vocab_size": 166912,
+    "rebuild_interval": 128,
+    "decay_tokens": 8192,
+    "swap_margin": 0.25,
+    "prompt_weight": 0.2,
+    "min_evidence": 256.0,
+    "probe_interval": 128,
+    "profile_path": "${HOME}/.cache/exllamav3/token_stats/49496f93c239aa4e.pt",
+    "enabled": true,
+    "full_bias": null,
+    "embedding": null,
+    "emb_dim": 0,
+    "n_alloc": 2048,
+    "bias": null,
+    "emb_rows": null,
+    "_fused_available": true,
+    "fused": true,
+    "n_active": 1395,
+    "observed": 3,
+    "evidence": 10251.599999999995,
+    "since_rebuild": 3,
+    "since_decay": 3,
+    "since_save": 3,
+    "rebuilds": 1,
+    "swapped": 1395,
+    "t_full": 0.0005823024999699556,
+    "t_sparse": 1.6135899932123722e-05,
+    "round_time": 0.052538627428859404,
+    "window": 7.0,
+    "head_calls": 1.0,
+    "miss_rate": 0.0,
+    "mode_sparse": true,
+    "mode_switches": 0,
+    "lookups": 0,
+    "misses": 0,
+    "rounds": 4,
+    "probes": 0,
+    "probe_disagree_inside": 0,
+    "probe_disagree_outside": 0
+  }
+}

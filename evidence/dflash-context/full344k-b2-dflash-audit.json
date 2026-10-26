@@ -1,0 +1,47 @@
+{
+  "result_file": "full344k-b2-dflash.json",
+  "state": "failed",
+  "expected": {
+    "cedar": "cobalt-lantern-8136",
+    "harbor": "silver-meadow-4729",
+    "maple": "violet-compass-9264"
+  },
+  "received": {
+    "cedar": "cobalt-lantern-813",
+    "harbor": "silver-meadow-4729",
+    "maple": "violet-compass-9264"
+  },
+  "exact_key_value_checks": {
+    "cedar": false,
+    "harbor": true,
+    "maple": true
+  },
+  "markers": [
+    {
+      "key": "cedar",
+      "value": "cobalt-lantern-8136",
+      "token_position": 6948
+    },
+    {
+      "key": "harbor",
+      "value": "silver-meadow-4729",
+      "token_position": 171773
+    },
+    {
+      "key": "maple",
+      "value": "violet-compass-9264",
+      "token_position": 322862
+    }
+  ],
+  "capacity": 344064,
+  "input_tokens": 343545,
+  "output_tokens": 256,
+  "occupied_context_tokens": 343801,
+  "decode_tokens_s_recomputed": 15.004596951297561,
+  "ttft_s": 525.3226927259966,
+  "prompt_hash_verified": true,
+  "raw_token_counts_verified": true,
+  "values_unique_and_absent_from_question": true,
+  "cached_prompt_tokens": 0,
+  "limits": "One synthetic archive retrieval test, three key/value pairs; not a comprehensive long-context quality evaluation."
+}

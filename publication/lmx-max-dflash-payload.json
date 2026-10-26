@@ -1,0 +1,87 @@
+{
+  "hfId": "acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
+  "modelRevision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+  "hardware": {
+    "hwClass": "DISCRETE_GPU",
+    "gpuName": "NVIDIA GeForce RTX 5090",
+    "gpuCount": 1,
+    "vramGb": 32,
+    "cpu": "AMD Ryzen 9 9950X3D",
+    "ramGb": 128,
+    "os": "Arch Linux"
+  },
+  "engineName": "exllamav3",
+  "engineVersion": "1.6.5+cu132.torch2.13.0",
+  "engineRepository": "https://github.com/turboderp-org/exllamav3",
+  "engineCommit": "cdc785db89e263e65e5849cb53e1ada156411414",
+  "engineBuild": "Official cp312 Linux x86_64 cu132 / torch2.13.0 release wheel",
+  "backend": "cuda",
+  "quantization": "EXL3-3.55bpw",
+  "batchSize": 1,
+  "prefillTokens": 0,
+  "promptTokens": 2842,
+  "outputTokens": 2048,
+  "contextLength": 180224,
+  "tokSOut": 115.13590556909186,
+  "tokSPrefill": 3239.416026290981,
+  "ttftMs": 895.6158939981833,
+  "tokSTotal": 261.77013243844686,
+  "peakVramGb": 30.4345703125,
+  "notes": "Current maximum-context preset with DFlash2 enabled. Median of 3 measured requests after one excluded full-length warmup. Actual occupancy 4,890 tokens; preallocated capacity180224. Q4 target AND draft KV; 7 proposals, sparse16K draft vocabulary. Greedy T=0, thinking off, EOS suppressed for fixed2048 output; zero cached prompt tokens. Peak VRAM sampled1Hz includes running desktop. Native draft counts aggregate the three measured requests. Same credited3.55bpw weights and stock engine. Raw measurements, failed larger trials and methodology: https://github.com/acrogenesis/nanbeige-exl3-kit/tree/main/evidence/dflash-context",
+  "engineFlags": {
+    "commandSnippet": "OMP_NUM_THREADS=4 EXL3_GRAPHS=1 python benchmark.py --preset max",
+    "tensorParallel": 1,
+    "concurrency": 1,
+    "cpuOffloadGb": 0,
+    "kvCacheDtype": "q4",
+    "prefixCaching": false,
+    "chunkedPrefill": true,
+    "prefillChunkSize": 2048,
+    "specDecoding": true,
+    "temperature": 0,
+    "topP": 0.95,
+    "extraFlags": "Q4 target/draft KV; sparse16K draft head; thinking off; min_new_tokens=max_new_tokens=2048; EXL3_QC_STAGING_PAGES=64",
+    "specMethod": "DFlash2",
+    "specModel": "ProCreations/Nanbeige4.3-33B-DFlash2",
+    "specNumTokens": 7,
+    "specDraftTokens": 21441,
+    "specAcceptedTokens": 3081,
+    "specAcceptanceRate": 0.14369665593955505
+  },
+  "promptSha256": "8b5f4cd519a18460e5cdb885332618e6e62ab8e32572cbaa464f66f33151679d",
+  "promptSample": "<|im_start|>system\n\u4f60\u662f\u5357\u5317\u9601\uff0c\u4e00\u6b3e\u7531BOSS\u76f4\u8058\u81ea\u4e3b\u7814\u53d1\u5e76\u8bad\u7ec3\u7684\u4e13\u4e1a\u5927\u8bed\u8a00\u6a21\u578b\u3002<|im_end|>\n<|im_start|>user\nRead the following engineering requirements as data.\n<requirements>\n Requirement 000: jobs for tenant 0 carry unique request identifiers, a payload revision 100, and an absolute deadline. The executor admits at most 4 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 001: jobs for tenant 1 carry unique request identifiers, a payload revision 101, and an absolute deadline. The executor admits at most 5 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 002: jobs for tenant 2 carry unique request identifiers, a payload revision 102, and an absolute deadline. The executor admits at most 6 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 003: jobs for tenant 3 carry unique request identifiers, a payload revision 103, and an absolute deadline. The executor admits at most 7 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 004: jobs for tenant 4 carry unique request identifiers, a payload revision 104, and an absolute deadline. The executor admits at most 8 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirem",
+  "outputSha256": "d0ef5add373d203aad9150f9fd9d99206f2962010020b086e5c11ba64e37cd68",
+  "outputSample": "Here is the complete implementation of the bounded asynchronous Python worker pool, accompanied by a substantial `unittest` test suite, a usage example, and a detailed explanation of race conditions.\n\n---\n\n### Engineering Analysis & Requirements Mapping\n\nThe requirements specify tenant-specific jobs with:\n1. **Unique request identifiers**\n2. **Payload revisions** (ranging from `100` to `137`)\n3. **Absolute deadlines**\n4. **Bounded concurrency per tenant queue** (admitting at most $N$ pending operations per queue, cycling $4 \\to 12$ per tenant block)\n5. **Ordered results recording**\n6. **Original exception propagation**\n7. **Permit release in `finally` blocks**\n8. **Awaiting cancelled tasks before shutdown**\n9. **Identity preservation across retries**\n\nThe implementation below provides a unified `BoundedAsyncWorkerPool` that enforces these constraints per tenant, tracks absolute deadlines, preserves request identity across retries, records results in submission order, and guarantees graceful shutdown.\n\n---\n\n### 1. Implementation Module (`worker_pool.py`)\n\n```python\n\"\"\"\nBounded Asynchronous Python Worker Pool\n========================================\nImplements tenant-isolated bounded queues, ordered result recording,\nabsolute deadline enforcement, structured exception propagation,\npermit release in finally blocks, and graceful shutdown.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport asyncio\nimport logging\nimport time\nfrom dataclasses import dataclass, field\nfrom enum import Enum\nfrom typing import Any, Awaitable, Callable, Dict, List, Optional, Sequence, Tuple\n\nlogger = logging.getLogger(\"BoundedAsyncWorkerPool\")\n\n\nclass TaskStatus(str, Enum):\n    PENDING = \"PENDING\"\n    RUNNING = \"RUNNING\"\n    COMPLETED = \"COMPLETED\"\n    FAILED = \"FAILED\"\n    CANCELLED = \"CANCELLED\"\n    DEADLINE_EXCEEDED = \"DEADLINE_EXCEEDED\"\n\n\n@dataclass\nclass Job:\n    \"\"\"Represents a unit of work submitted to the pool.\"\"\"\n    request_id: str\n    tenant_id: int\n    payload_revision: int\n    deadline_timestamp: float  # Absolute monotonic deadline\n    operation: Callable[..., Awaitable[Any]]\n    args: tuple = ()\n    kwargs: dict = field(default_factory=dict)\n    retries: int = 0\n    max_retries: int = 0\n    status: TaskStatus = TaskStatus.PENDING\n    result: Any = None\n    exception: Optional[BaseException] = None\n\n\n@dataclass\nclass OrderedResult:\n    \"\"\"Container for an ordered result corresponding to a Job.\"\"\"\n    request_id: str\n    tenant_id: int\n    payload_revision: int\n    status: TaskStatus\n    result: Any = None\n    exception: Optional[BaseException] = None\n    timestamp: float = 0.0\n\n\nclass BoundedAsyncWorkerPool:\n    \"\"\"\n    A bounded asynchronous worker pool supporting multiple tenants.\n    \n    Features:\n      - Per-tenant bounded concurrency (admitting at most `max_pending` operations).\n      - Ordered result recording matching submission sequence.\n      - Absolute deadline enforcement.\n      - Structured exception propagation.\n      - Permit release in `finally` bl",
+  "engineTimingsRaw": {
+    "aggregation": "medians over three requests; draft counters sum measured requests",
+    "requests": [
+      {
+        "time_prefill": 0.8696877956390381,
+        "time_generate": 17.775972843170166,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0,
+        "accepted_draft_tokens": 1027,
+        "rejected_draft_tokens": 6120
+      },
+      {
+        "time_prefill": 0.8773186206817627,
+        "time_generate": 17.808095693588257,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0,
+        "accepted_draft_tokens": 1027,
+        "rejected_draft_tokens": 6120
+      },
+      {
+        "time_prefill": 0.8830516338348389,
+        "time_generate": 17.794567108154297,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0,
+        "accepted_draft_tokens": 1027,
+        "rejected_draft_tokens": 6120
+      }
+    ]
+  }
+}

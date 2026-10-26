@@ -1,0 +1,1896 @@
+{
+  "settings": {
+    "capacity": 344064,
+    "target_dir": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-EXL3/snapshots/56a23706262458b23ba7dde5ba1eea053a109544",
+    "draft_dir": null,
+    "input_tokens": 343545,
+    "target_bits": 2,
+    "draft_bits": 2,
+    "no_draft": false,
+    "output_tokens": 256,
+    "temperature": 0.6,
+    "label": "full344k-b2-dflash"
+  },
+  "state": "complete",
+  "started_epoch": 1793041281.2008986,
+  "target_dir": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-EXL3/snapshots/56a23706262458b23ba7dde5ba1eea053a109544",
+  "draft_dir": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-DFlash2/snapshots/4b7c7f8509d5286b7264db096d764b4a163d74f4",
+  "versions": {
+    "torch": "2.13.0+cu132",
+    "exllamav3": "1.6.5+cu132.torch2.13.0",
+    "transformers": "4.57.6"
+  },
+  "sparse_draft_head": 16384,
+  "kv_staging_pages": "64",
+  "sparse_profile_seed_sha256": "cfa21c7c9c0b7dccaf8e2f181c85c94c1bbb69ad2ad1303480c281f8608fc6c9",
+  "markers": [
+    {
+      "key": "cedar",
+      "value": "cobalt-lantern-8136",
+      "token_position": 6948
+    },
+    {
+      "key": "harbor",
+      "value": "silver-meadow-4729",
+      "token_position": 171773
+    },
+    {
+      "key": "maple",
+      "value": "violet-compass-9264",
+      "token_position": 322862
+    }
+  ],
+  "prompt_sha256": "953f63aa7404ce61ac253e10c6b4aaae43deb62cc4c369ad44a4c81888161bf3",
+  "target_cache_bytes": 11450449920,
+  "draft_cache_bytes": 330301440,
+  "memory_after_warmup": {
+    "free_bytes": 971702272,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 28471949312,
+    "torch_reserved_bytes": 29368516608,
+    "torch_peak_allocated_bytes": 29184187392,
+    "torch_peak_reserved_bytes": 29368516608
+  },
+  "request_started_epoch": 1793041285.2182195,
+  "prefill_progress": {
+    "tokens": 335872,
+    "total": 343544,
+    "elapsed_s": 502.17860300000757
+  },
+  "ttft_s": 525.3226927259966,
+  "events": [
+    {
+      "seconds": 525.3226927259966,
+      "token_ids": [
+        7255
+      ]
+    },
+    {
+      "seconds": 525.3911790699931,
+      "token_ids": [
+        5174
+      ]
+    },
+    {
+      "seconds": 525.4593454569986,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 525.5277835610032,
+      "token_ids": [
+        152405
+      ]
+    },
+    {
+      "seconds": 525.5963666479947,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 525.6650030659948,
+      "token_ids": [
+        259
+      ]
+    },
+    {
+      "seconds": 525.7339723420009,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 525.8029278180038,
+      "token_ids": [
+        761
+      ]
+    },
+    {
+      "seconds": 525.8719028049964,
+      "token_ids": [
+        287
+      ]
+    },
+    {
+      "seconds": 525.9405905540043,
+      "token_ids": [
+        1832
+      ]
+    },
+    {
+      "seconds": 526.0093008539989,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 526.0777852089959,
+      "token_ids": [
+        152355
+      ]
+    },
+    {
+      "seconds": 526.1466989239998,
+      "token_ids": [
+        35959
+      ]
+    },
+    {
+      "seconds": 526.2164991699974,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 526.2875017949991,
+      "token_ids": [
+        16219
+      ]
+    },
+    {
+      "seconds": 526.3559695790027,
+      "token_ids": [
+        842
+      ]
+    },
+    {
+      "seconds": 526.4246837399987,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 526.4937718889996,
+      "token_ids": [
+        152411
+      ]
+    },
+    {
+      "seconds": 526.5625043089967,
+      "token_ids": [
+        152367
+      ]
+    },
+    {
+      "seconds": 526.6312425700016,
+      "token_ids": [
+        152385
+      ]
+    },
+    {
+      "seconds": 526.6999579200055,
+      "token_ids": [
+        748
+      ]
+    },
+    {
+      "seconds": 526.7690652799938,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 526.8377713100053,
+      "token_ids": [
+        259
+      ]
+    },
+    {
+      "seconds": 526.9064069379965,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 526.9748973929964,
+      "token_ids": [
+        12131
+      ]
+    },
+    {
+      "seconds": 527.0438464489998,
+      "token_ids": [
+        4364
+      ]
+    },
+    {
+      "seconds": 527.1125609890005,
+      "token_ids": [
+        1832
+      ]
+    },
+    {
+      "seconds": 527.1811609360011,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 527.2498710960062,
+      "token_ids": [
+        83330
+      ]
+    },
+    {
+      "seconds": 527.3187484399969,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 527.3879653129989,
+      "token_ids": [
+        1692
+      ]
+    },
+    {
+      "seconds": 527.4566765530035,
+      "token_ids": [
+        10282
+      ]
+    },
+    {
+      "seconds": 527.5261716310051,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 527.5950673659972,
+      "token_ids": [
+        152395
+      ]
+    },
+    {
+      "seconds": 527.6637676060054,
+      "token_ids": [
+        152413
+      ]
+    },
+    {
+      "seconds": 527.7324837159977,
+      "token_ids": [
+        152375
+      ]
+    },
+    {
+      "seconds": 527.8013068089931,
+      "token_ids": [
+        152398
+      ]
+    },
+    {
+      "seconds": 527.8699357470032,
+      "token_ids": [
+        748
+      ]
+    },
+    {
+      "seconds": 527.9386085459992,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 528.0080408229987,
+      "token_ids": [
+        259
+      ]
+    },
+    {
+      "seconds": 528.0766414209938,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 528.1452999600006,
+      "token_ids": [
+        3598
+      ]
+    },
+    {
+      "seconds": 528.2139579579962,
+      "token_ids": [
+        296
+      ]
+    },
+    {
+      "seconds": 528.2826459380012,
+      "token_ids": [
+        1832
+      ]
+    },
+    {
+      "seconds": 528.351373508005,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 528.4199701259931,
+      "token_ids": [
+        80847
+      ]
+    },
+    {
+      "seconds": 528.4885898640059,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 528.557007647003,
+      "token_ids": [
+        19144
+      ]
+    },
+    {
+      "seconds": 528.6274516779959,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 528.6960185250064,
+      "token_ids": [
+        152398
+      ]
+    },
+    {
+      "seconds": 528.7651501749933,
+      "token_ids": [
+        152375
+      ]
+    },
+    {
+      "seconds": 528.8342020529963,
+      "token_ids": [
+        152408
+      ]
+    },
+    {
+      "seconds": 528.9029696649959,
+      "token_ids": [
+        152395
+      ]
+    },
+    {
+      "seconds": 528.9029797249968,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 528.972211647997,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 529.0409769789985,
+      "token_ids": [
+        152406
+      ]
+    },
+    {
+      "seconds": 529.1096398880036,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 529.1782107549952,
+      "token_ids": [
+        7255
+      ]
+    },
+    {
+      "seconds": 529.246820151995,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 529.3154210200009,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 529.3154295900022,
+      "token_ids": [
+        454
+      ]
+    },
+    {
+      "seconds": 529.3841388500005,
+      "token_ids": [
+        19053
+      ]
+    },
+    {
+      "seconds": 529.4529692630022,
+      "token_ids": [
+        5766
+      ]
+    },
+    {
+      "seconds": 529.5218232059997,
+      "token_ids": [
+        6076
+      ]
+    },
+    {
+      "seconds": 529.5906819200027,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 529.6595971250063,
+      "token_ids": [
+        22468
+      ]
+    },
+    {
+      "seconds": 529.7284785090014,
+      "token_ids": [
+        29287
+      ]
+    },
+    {
+      "seconds": 529.7973292120005,
+      "token_ids": [
+        442
+      ]
+    },
+    {
+      "seconds": 529.8661542949994,
+      "token_ids": [
+        13742
+      ]
+    },
+    {
+      "seconds": 529.9348901460035,
+      "token_ids": [
+        2438
+      ]
+    },
+    {
+      "seconds": 530.0036929979979,
+      "token_ids": [
+        7299
+      ]
+    },
+    {
+      "seconds": 530.0724118090002,
+      "token_ids": [
+        454
+      ]
+    },
+    {
+      "seconds": 530.1411959099933,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 530.2099630620069,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 530.2099714619981,
+      "token_ids": [
+        764
+      ]
+    },
+    {
+      "seconds": 530.2786032000004,
+      "token_ids": [
+        26744
+      ]
+    },
+    {
+      "seconds": 530.3472290479986,
+      "token_ids": [
+        65034
+      ]
+    },
+    {
+      "seconds": 530.416364247998,
+      "token_ids": [
+        11459
+      ]
+    },
+    {
+      "seconds": 530.4851491400041,
+      "token_ids": [
+        2438
+      ]
+    },
+    {
+      "seconds": 530.5538790010032,
+      "token_ids": [
+        7299
+      ]
+    },
+    {
+      "seconds": 530.6225436690002,
+      "token_ids": [
+        358
+      ]
+    },
+    {
+      "seconds": 530.6914212539996,
+      "token_ids": [
+        1358
+      ]
+    },
+    {
+      "seconds": 530.760184535,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 530.8290994700073,
+      "token_ids": [
+        72642
+      ]
+    },
+    {
+      "seconds": 530.8979797640059,
+      "token_ids": [
+        1798
+      ]
+    },
+    {
+      "seconds": 530.9667941160005,
+      "token_ids": [
+        152386
+      ]
+    },
+    {
+      "seconds": 531.0357204019965,
+      "token_ids": [
+        84775
+      ]
+    },
+    {
+      "seconds": 531.1047988299979,
+      "token_ids": [
+        152608
+      ]
+    },
+    {
+      "seconds": 531.1737038550054,
+      "token_ids": [
+        15520
+      ]
+    },
+    {
+      "seconds": 531.242627560001,
+      "token_ids": [
+        152361
+      ]
+    },
+    {
+      "seconds": 531.3113404210017,
+      "token_ids": [
+        363
+      ]
+    },
+    {
+      "seconds": 531.4035840660072,
+      "token_ids": [
+        6594
+      ]
+    },
+    {
+      "seconds": 531.471627980005,
+      "token_ids": [
+        3517
+      ]
+    },
+    {
+      "seconds": 531.5398336579965,
+      "token_ids": [
+        392
+      ]
+    },
+    {
+      "seconds": 531.6082790219953,
+      "token_ids": [
+        3141
+      ]
+    },
+    {
+      "seconds": 531.6767265450035,
+      "token_ids": [
+        83545
+      ]
+    },
+    {
+      "seconds": 531.7452401509945,
+      "token_ids": [
+        1109
+      ]
+    },
+    {
+      "seconds": 531.8144043810025,
+      "token_ids": [
+        623
+      ]
+    },
+    {
+      "seconds": 531.8827519829938,
+      "token_ids": [
+        1000
+      ]
+    },
+    {
+      "seconds": 531.9514947639982,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 532.0203997280041,
+      "token_ids": [
+        6727
+      ]
+    },
+    {
+      "seconds": 532.0891563890036,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 532.1579118399968,
+      "token_ids": [
+        7182
+      ]
+    },
+    {
+      "seconds": 532.2269211480016,
+      "token_ids": [
+        2680
+      ]
+    },
+    {
+      "seconds": 532.2956050270004,
+      "token_ids": [
+        589
+      ]
+    },
+    {
+      "seconds": 532.3642791059974,
+      "token_ids": [
+        22008
+      ]
+    },
+    {
+      "seconds": 532.4330749280052,
+      "token_ids": [
+        261
+      ]
+    },
+    {
+      "seconds": 532.5017343570071,
+      "token_ids": [
+        930
+      ]
+    },
+    {
+      "seconds": 532.5703461350058,
+      "token_ids": [
+        4528
+      ]
+    },
+    {
+      "seconds": 532.6390176040004,
+      "token_ids": [
+        152382
+      ]
+    },
+    {
+      "seconds": 532.707753744995,
+      "token_ids": [
+        284
+      ]
+    },
+    {
+      "seconds": 532.7762804499944,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 532.8447145940008,
+      "token_ids": [
+        72642
+      ]
+    },
+    {
+      "seconds": 532.9131967879948,
+      "token_ids": [
+        1798
+      ]
+    },
+    {
+      "seconds": 532.9817557049973,
+      "token_ids": [
+        152386
+      ]
+    },
+    {
+      "seconds": 533.0504394739983,
+      "token_ids": [
+        84775
+      ]
+    },
+    {
+      "seconds": 533.1190387009992,
+      "token_ids": [
+        598
+      ]
+    },
+    {
+      "seconds": 533.1875019660074,
+      "token_ids": [
+        9930
+      ]
+    },
+    {
+      "seconds": 533.2558650169958,
+      "token_ids": [
+        152426
+      ]
+    },
+    {
+      "seconds": 533.3244283539971,
+      "token_ids": [
+        374
+      ]
+    },
+    {
+      "seconds": 533.3937314579962,
+      "token_ids": [
+        598
+      ]
+    },
+    {
+      "seconds": 533.4621486310061,
+      "token_ids": [
+        2565
+      ]
+    },
+    {
+      "seconds": 533.5307397080032,
+      "token_ids": [
+        40583
+      ]
+    },
+    {
+      "seconds": 533.6016070000042,
+      "token_ids": [
+        1326
+      ]
+    },
+    {
+      "seconds": 533.670658218005,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 533.7394171589985,
+      "token_ids": [
+        888
+      ]
+    },
+    {
+      "seconds": 533.8079383650038,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 533.8764103290014,
+      "token_ids": [
+        1152
+      ]
+    },
+    {
+      "seconds": 534.0421773099952,
+      "token_ids": [
+        322
+      ]
+    },
+    {
+      "seconds": 534.1095224269957,
+      "token_ids": [
+        261
+      ]
+    },
+    {
+      "seconds": 534.1772902350058,
+      "token_ids": [
+        135117
+      ]
+    },
+    {
+      "seconds": 534.2461056669999,
+      "token_ids": [
+        458
+      ]
+    },
+    {
+      "seconds": 534.3142173429951,
+      "token_ids": [
+        804
+      ]
+    },
+    {
+      "seconds": 534.3824067700043,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 534.3824145700055,
+      "token_ids": [
+        3064
+      ]
+    },
+    {
+      "seconds": 534.4510828189959,
+      "token_ids": [
+        2321
+      ]
+    },
+    {
+      "seconds": 534.5201919690007,
+      "token_ids": [
+        844
+      ]
+    },
+    {
+      "seconds": 534.5903342030069,
+      "token_ids": [
+        361
+      ]
+    },
+    {
+      "seconds": 534.6589767219994,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 534.7274813370022,
+      "token_ids": [
+        152355
+      ]
+    },
+    {
+      "seconds": 534.7964671929949,
+      "token_ids": [
+        35959
+      ]
+    },
+    {
+      "seconds": 534.8661751580075,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 534.9353680189961,
+      "token_ids": [
+        16219
+      ]
+    },
+    {
+      "seconds": 535.0039907570026,
+      "token_ids": [
+        842
+      ]
+    },
+    {
+      "seconds": 535.0724984620028,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 535.141154950994,
+      "token_ids": [
+        152411
+      ]
+    },
+    {
+      "seconds": 535.1411641510058,
+      "token_ids": [
+        152367
+      ]
+    },
+    {
+      "seconds": 535.2097011769947,
+      "token_ids": [
+        152385
+      ]
+    },
+    {
+      "seconds": 535.278219201995,
+      "token_ids": [
+        14666
+      ]
+    },
+    {
+      "seconds": 535.3468268900033,
+      "token_ids": [
+        78430
+      ]
+    },
+    {
+      "seconds": 535.4153226149938,
+      "token_ids": [
+        2438
+      ]
+    },
+    {
+      "seconds": 535.483799530004,
+      "token_ids": [
+        7299
+      ]
+    },
+    {
+      "seconds": 535.5523046440067,
+      "token_ids": [
+        3900
+      ]
+    },
+    {
+      "seconds": 535.6212271789991,
+      "token_ids": [
+        6483
+      ]
+    },
+    {
+      "seconds": 535.6898777280003,
+      "token_ids": [
+        261
+      ]
+    },
+    {
+      "seconds": 535.7583479019959,
+      "token_ids": [
+        7129
+      ]
+    },
+    {
+      "seconds": 535.8273276590044,
+      "token_ids": [
+        4200
+      ]
+    },
+    {
+      "seconds": 535.8965898720053,
+      "token_ids": [
+        326
+      ]
+    },
+    {
+      "seconds": 535.9654506859952,
+      "token_ids": [
+        60331
+      ]
+    },
+    {
+      "seconds": 536.0339754409943,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 536.1025979489932,
+      "token_ids": [
+        45660
+      ]
+    },
+    {
+      "seconds": 536.1718838929955,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 536.1718958830024,
+      "token_ids": [
+        35387
+      ]
+    },
+    {
+      "seconds": 536.241065063994,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 536.3100294110045,
+      "token_ids": [
+        3468
+      ]
+    },
+    {
+      "seconds": 536.3786477579997,
+      "token_ids": [
+        3241
+      ]
+    },
+    {
+      "seconds": 536.4477211570047,
+      "token_ids": [
+        10150
+      ]
+    },
+    {
+      "seconds": 536.5170002410014,
+      "token_ids": [
+        284
+      ]
+    },
+    {
+      "seconds": 536.5861588209955,
+      "token_ids": [
+        4317
+      ]
+    },
+    {
+      "seconds": 536.6554611260071,
+      "token_ids": [
+        326
+      ]
+    },
+    {
+      "seconds": 536.7245017740061,
+      "token_ids": [
+        111765
+      ]
+    },
+    {
+      "seconds": 536.7936801650067,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 536.8633594379935,
+      "token_ids": [
+        59302
+      ]
+    },
+    {
+      "seconds": 536.9322061819985,
+      "token_ids": [
+        282
+      ]
+    },
+    {
+      "seconds": 537.0013224110007,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 537.0702699069952,
+      "token_ids": [
+        11101
+      ]
+    },
+    {
+      "seconds": 537.139139040999,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 537.208006685003,
+      "token_ids": [
+        30894
+      ]
+    },
+    {
+      "seconds": 537.2766963640024,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 537.2767041350016,
+      "token_ids": [
+        6706
+      ]
+    },
+    {
+      "seconds": 537.3456224800029,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 537.4145144640061,
+      "token_ids": [
+        14126
+      ]
+    },
+    {
+      "seconds": 537.4842084169941,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 537.553296676997,
+      "token_ids": [
+        7198
+      ]
+    },
+    {
+      "seconds": 537.6222876929969,
+      "token_ids": [
+        152373
+      ]
+    },
+    {
+      "seconds": 537.6912953410065,
+      "token_ids": [
+        343
+      ]
+    },
+    {
+      "seconds": 537.7603113079967,
+      "token_ids": [
+        261
+      ]
+    },
+    {
+      "seconds": 537.8294405479974,
+      "token_ids": [
+        13447
+      ]
+    },
+    {
+      "seconds": 537.898981817998,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 537.9678163909994,
+      "token_ids": [
+        358
+      ]
+    },
+    {
+      "seconds": 538.0368629190052,
+      "token_ids": [
+        261
+      ]
+    },
+    {
+      "seconds": 538.1055596689985,
+      "token_ids": [
+        35315
+      ]
+    },
+    {
+      "seconds": 538.174096985007,
+      "token_ids": [
+        22898
+      ]
+    },
+    {
+      "seconds": 538.244107075996,
+      "token_ids": [
+        297
+      ]
+    },
+    {
+      "seconds": 538.314779073,
+      "token_ids": [
+        261
+      ]
+    },
+    {
+      "seconds": 538.3835117529961,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 538.4525199810014,
+      "token_ids": [
+        6460
+      ]
+    },
+    {
+      "seconds": 538.522041520002,
+      "token_ids": [
+        152391
+      ]
+    },
+    {
+      "seconds": 538.5910726279981,
+      "token_ids": [
+        73828
+      ]
+    },
+    {
+      "seconds": 538.6619198090048,
+      "token_ids": [
+        10708
+      ]
+    },
+    {
+      "seconds": 538.7304506450018,
+      "token_ids": [
+        4816
+      ]
+    },
+    {
+      "seconds": 538.799916332995,
+      "token_ids": [
+        415
+      ]
+    },
+    {
+      "seconds": 538.8685296909971,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 538.9370265350008,
+      "token_ids": [
+        4979
+      ]
+    },
+    {
+      "seconds": 539.005431758007,
+      "token_ids": [
+        10344
+      ]
+    },
+    {
+      "seconds": 539.0742984219978,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 539.1433103989984,
+      "token_ids": [
+        764
+      ]
+    },
+    {
+      "seconds": 539.2121595820063,
+      "token_ids": [
+        6727
+      ]
+    },
+    {
+      "seconds": 539.2806472670054,
+      "token_ids": [
+        21815
+      ]
+    },
+    {
+      "seconds": 539.3492330339941,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 539.4180078460049,
+      "token_ids": [
+        12285
+      ]
+    },
+    {
+      "seconds": 539.4870069129975,
+      "token_ids": [
+        35070
+      ]
+    },
+    {
+      "seconds": 539.5560273199953,
+      "token_ids": [
+        337
+      ]
+    },
+    {
+      "seconds": 539.6250437779963,
+      "token_ids": [
+        2725
+      ]
+    },
+    {
+      "seconds": 539.6938671200041,
+      "token_ids": [
+        47490
+      ]
+    },
+    {
+      "seconds": 539.7625975510018,
+      "token_ids": [
+        1229
+      ]
+    },
+    {
+      "seconds": 539.8316760400048,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 539.9007665490062,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 539.9007755890052,
+      "token_ids": [
+        764
+      ]
+    },
+    {
+      "seconds": 539.9693990069936,
+      "token_ids": [
+        1358
+      ]
+    },
+    {
+      "seconds": 540.0380111950071,
+      "token_ids": [
+        3871
+      ]
+    },
+    {
+      "seconds": 540.1066925540072,
+      "token_ids": [
+        6594
+      ]
+    },
+    {
+      "seconds": 540.1755550079979,
+      "token_ids": [
+        14611
+      ]
+    },
+    {
+      "seconds": 540.2444191910035,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 540.314223976995,
+      "token_ids": [
+        34380
+      ]
+    },
+    {
+      "seconds": 540.3835278420011,
+      "token_ids": [
+        115183
+      ]
+    },
+    {
+      "seconds": 540.4525396389945,
+      "token_ids": [
+        442
+      ]
+    },
+    {
+      "seconds": 540.5214535739942,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 540.5904313799983,
+      "token_ids": [
+        26744
+      ]
+    },
+    {
+      "seconds": 540.6592193719989,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 540.6592281630001,
+      "token_ids": [
+        392
+      ]
+    },
+    {
+      "seconds": 540.7280514750018,
+      "token_ids": [
+        152382
+      ]
+    },
+    {
+      "seconds": 540.7969832910021,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 540.8658447240014,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 540.8658547240047,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 540.9347893100057,
+      "token_ids": [
+        112649
+      ]
+    },
+    {
+      "seconds": 541.0039894119982,
+      "token_ids": [
+        9105
+      ]
+    },
+    {
+      "seconds": 541.0731743729993,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 541.1418203609937,
+      "token_ids": [
+        152355
+      ]
+    },
+    {
+      "seconds": 541.210570381998,
+      "token_ids": [
+        35959
+      ]
+    },
+    {
+      "seconds": 541.2796599720023,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 541.3488106120058,
+      "token_ids": [
+        16219
+      ]
+    },
+    {
+      "seconds": 541.4186322390015,
+      "token_ids": [
+        842
+      ]
+    },
+    {
+      "seconds": 541.4875918150065,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 541.558358344002,
+      "token_ids": [
+        152411
+      ]
+    },
+    {
+      "seconds": 541.6271442860016,
+      "token_ids": [
+        152367
+      ]
+    },
+    {
+      "seconds": 541.6958571959985,
+      "token_ids": [
+        152385
+      ]
+    },
+    {
+      "seconds": 541.764919164998,
+      "token_ids": [
+        152608
+      ]
+    },
+    {
+      "seconds": 541.8338343689975,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 541.9025073189987,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 541.9711837979994,
+      "token_ids": [
+        52323
+      ]
+    },
+    {
+      "seconds": 542.0400022300018,
+      "token_ids": [
+        9105
+      ]
+    },
+    {
+      "seconds": 542.1094026070059,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 542.1781595979992,
+      "token_ids": [
+        83330
+      ]
+    },
+    {
+      "seconds": 542.2469555900025,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 542.3174844440073,
+      "token_ids": [
+        1692
+      ]
+    }
+  ],
+  "output_tokens": 256,
+  "output_token_ids": [
+    7255,
+    5174,
+    13,
+    152405,
+    13,
+    259,
+    152383,
+    761,
+    287,
+    1832,
+    471,
+    152355,
+    35959,
+    152369,
+    16219,
+    842,
+    152369,
+    152411,
+    152367,
+    152385,
+    748,
+    13,
+    259,
+    152383,
+    12131,
+    4364,
+    1832,
+    471,
+    83330,
+    152369,
+    1692,
+    10282,
+    152369,
+    152395,
+    152413,
+    152375,
+    152398,
+    748,
+    13,
+    259,
+    152383,
+    3598,
+    296,
+    1832,
+    471,
+    80847,
+    152369,
+    19144,
+    152369,
+    152398,
+    152375,
+    152408,
+    152395,
+    152383,
+    13,
+    152406,
+    13,
+    7255,
+    13,
+    13,
+    454,
+    19053,
+    5766,
+    6076,
+    269,
+    22468,
+    29287,
+    442,
+    13742,
+    2438,
+    7299,
+    454,
+    13,
+    13,
+    764,
+    26744,
+    65034,
+    11459,
+    2438,
+    7299,
+    358,
+    1358,
+    1495,
+    72642,
+    1798,
+    152386,
+    84775,
+    152608,
+    15520,
+    152361,
+    363,
+    6594,
+    3517,
+    392,
+    3141,
+    83545,
+    1109,
+    623,
+    1000,
+    269,
+    6727,
+    152369,
+    7182,
+    2680,
+    589,
+    22008,
+    261,
+    930,
+    4528,
+    152382,
+    284,
+    1495,
+    72642,
+    1798,
+    152386,
+    84775,
+    598,
+    9930,
+    152426,
+    374,
+    598,
+    2565,
+    40583,
+    1326,
+    152363,
+    888,
+    269,
+    1152,
+    322,
+    261,
+    135117,
+    458,
+    804,
+    152369,
+    3064,
+    2321,
+    844,
+    361,
+    1495,
+    152355,
+    35959,
+    152369,
+    16219,
+    842,
+    152369,
+    152411,
+    152367,
+    152385,
+    14666,
+    78430,
+    2438,
+    7299,
+    3900,
+    6483,
+    261,
+    7129,
+    4200,
+    326,
+    60331,
+    152363,
+    45660,
+    152363,
+    35387,
+    152363,
+    3468,
+    3241,
+    10150,
+    284,
+    4317,
+    326,
+    111765,
+    152363,
+    59302,
+    282,
+    152363,
+    11101,
+    152363,
+    30894,
+    152363,
+    6706,
+    152363,
+    14126,
+    152363,
+    7198,
+    152373,
+    343,
+    261,
+    13447,
+    152363,
+    358,
+    261,
+    35315,
+    22898,
+    297,
+    261,
+    1495,
+    6460,
+    152391,
+    73828,
+    10708,
+    4816,
+    415,
+    269,
+    4979,
+    10344,
+    471,
+    764,
+    6727,
+    21815,
+    269,
+    12285,
+    35070,
+    337,
+    2725,
+    47490,
+    1229,
+    13,
+    13,
+    764,
+    1358,
+    3871,
+    6594,
+    14611,
+    152363,
+    34380,
+    115183,
+    442,
+    269,
+    26744,
+    152363,
+    392,
+    152382,
+    13,
+    13,
+    152369,
+    112649,
+    9105,
+    1495,
+    152355,
+    35959,
+    152369,
+    16219,
+    842,
+    152369,
+    152411,
+    152367,
+    152385,
+    152608,
+    13,
+    152369,
+    52323,
+    9105,
+    1495,
+    83330,
+    152369,
+    1692
+  ],
+  "text": "```json\n{\n  \"cedar\": \"cobalt-lantern-813\",\n  \"harbor\": \"silver-meadow-4729\",\n  \"maple\": \"violet-compass-9264\"\n}\n```\n\n**Distinguishing the audit secrets from ordinary event records**\n\nThe archive mixes routine event records with three `AUDIT_SECRET` entries. The secret lines are recognisable because they follow the operator-event pattern but substitute a different shape: an `AUDIT_SECRET <token> = <value>` line, where the value is a hyphenated two-word string such as `cobalt-lantern-813`. Ordinary event records instead describe a named component (inventory, billing, gateway, etc.) performing an operation (validated, replayed, committed, rotated, released, checked, stored) on a partition, with a numeric revision and a `status=confirmed`, followed by the fixed sentence \"The operator retained the transaction receipt for later reconciliation.\"\n\nThe three exact secret strings, copied verbatim from the archive, are:\n\n- cedar → `cobalt-lantern-813`\n- harbor → `silver-me",
+  "terminal": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 0,
+    "eos_reason": "max_new_tokens",
+    "text": "me",
+    "full_completion": "```json\n{\n  \"cedar\": \"cobalt-lantern-813\",\n  \"harbor\": \"silver-meadow-4729\",\n  \"maple\": \"violet-compass-9264\"\n}\n```\n\n**Distinguishing the audit secrets from ordinary event records**\n\nThe archive mixes routine event records with three `AUDIT_SECRET` entries. The secret lines are recognisable because they follow the operator-event pattern but substitute a different shape: an `AUDIT_SECRET <token> = <value>` line, where the value is a hyphenated two-word string such as `cobalt-lantern-813`. Ordinary event records instead describe a named component (inventory, billing, gateway, etc.) performing an operation (validated, replayed, committed, rotated, released, checked, stored) on a partition, with a numeric revision and a `status=confirmed`, followed by the fixed sentence \"The operator retained the transaction receipt for later reconciliation.\"\n\nThe three exact secret strings, copied verbatim from the archive, are:\n\n- cedar → `cobalt-lantern-813`\n- harbor → `silver-me",
+    "new_tokens": 256,
+    "prompt_tokens": 343545,
+    "time_enqueued": 0.0018928050994873047,
+    "time_prefill": 525.2481572628021,
+    "time_generate": 17.060888051986694,
+    "cached_pages": 0,
+    "cached_tokens": 0,
+    "accepted_draft_tokens": 10,
+    "rejected_draft_tokens": 1712
+  },
+  "wall_s": 542.3177676610067,
+  "decode_s": 16.994791718010674,
+  "decode_tokens_s": 15.004596951297561,
+  "end_to_end_tokens_s": 0.4720479675672753,
+  "occupied_context_tokens": 343801,
+  "memory_final": {
+    "free_bytes": 636354560,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 28504001024,
+    "torch_reserved_bytes": 29641146368,
+    "torch_peak_allocated_bytes": 29564084224,
+    "torch_peak_reserved_bytes": 29641146368
+  },
+  "retrieval": {
+    "cedar": false,
+    "harbor": true,
+    "maple": true
+  },
+  "retrieval_passed": false,
+  "completed_epoch": 1793041827.5365465
+}
