@@ -6,7 +6,7 @@
     "MODEL_LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "NOTICE": "af226324352bcce2a4148d0f654f2e79c6deedc8420584d946607694294ea36f",
     "PUBLICATION.json": "aecab692cccec78e4ae9d1284a0e429e2554a146cb4bbb75b38ecbf65bf55d56",
-    "README.md": "f780ec7bffd63ae49022c548997c25d6d9dfe42c20028b660ce7093b9a1a3266",
+    "README.md": "f0efe86e31a71718fc1c1bea11cf7a71056012f6c56f2300f1b6c127ed7728f9",
     "bench_exl3.py": "a1d7def3bd5b605a8ebf59754c4a1d86835f2c4874d975a87d429bd29bd824f0",
     "benchmark.py": "7b4c6a7d4e5d273d7f3744715bfadbde2498421d1fbfa8230ec9c80bd296785c",
     "benchmark_full.py": "8a538fdcabec5073e110378a2db9cf6209dc717b13b28133d22aa39a9e0b2b24",
@@ -74,7 +74,9 @@
     "run-fast.sh": "8e2f8222f1861d31306217a249f827da9eaeb066b33dc6ee30181867f138c225",
     "run-max.sh": "b52fc454c89ea0bb1fc69df82fe1e1f2849575ff6b5f928a7e63615aed2cdc26",
     "runtime_helpers.py": "37d6b3dc54e9e9ba86ac1cffc6bcf2f6b35b51eb01adad065758f1eb92d093f1",
-    "setup.sh": "aabbb04ca7b6cfb0f61b7bd4c90b5992282aabe41fd2f01813533b63bea6b85c"
+    "setup.sh": "aabbb04ca7b6cfb0f61b7bd4c90b5992282aabe41fd2f01813533b63bea6b85c",
+    "DEPENDENCIES.md": "b5a77ed2e1d3259866d72d5e46e125a80274e6ebc8c3806b968d6ea6b134301c",
+    "publication/lmx-report-update-payload.json": "1a1a5d146b8b9a5db477dfd6acfa557f9095aaaa55af0f644c330e52c30c5065"
   },
   "note": "Excludes itself and ignored outputs; machine home paths in archived evidence are replaced with ${HOME}."
 }

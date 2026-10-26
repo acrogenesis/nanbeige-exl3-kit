@@ -28,6 +28,10 @@ An earlier five-prompt, three-seed suite measured **103.40 median / 101.77 poole
 
 [LocalMaxxing report and attached results](https://www.localmaxxing.com/en/models/acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw/reports/cmvpehkhi0264ng01auzavjoo) contain three approved speed entries with the exact precision, settings and raw evidence linked. [PUBLICATION.json](PUBLICATION.json) records the model commit, engine revision, run IDs and readback verification; publication/ retains the submitted non-secret payloads.
 
+## Dependency pins
+
+The tested Transformers4.57.6 pin currently has five GitHub advisories (four high, one moderate). [DEPENDENCIES.md](DEPENDENCIES.md) links them and records the untested upgrade boundary.
+
 ## Install and run
 
 The supplied wheel was tested on NVIDIA Linux x86_64 with Python 3.12, CUDA 13.2 / torch 2.13.0 and a compatible installed NVIDIA driver. Other platforms were not tested by this kit.
