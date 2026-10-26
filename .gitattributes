@@ -1,0 +1,2 @@
+# Preserve exact measured prompt/log bytes, including significant whitespace.
+evidence/** whitespace=-blank-at-eof,-blank-at-eol

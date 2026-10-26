@@ -1,0 +1,61 @@
+{
+  "reference": {
+    "source": "User-supplied screenshot; complete reference record could not be fetched (public API GET 403).",
+    "model": "Nanbeige4.3-33B",
+    "engine": "vllm",
+    "speculative_method": "ngram_gpu",
+    "hardware_label": "RTX PRO 6000 Blackwell Max-\u2026 (truncated in supplied card)",
+    "weight_quantization": "FP8",
+    "batch_size": 1,
+    "input_tokens": 2842,
+    "output_tokens": 2048,
+    "context_limit_tokens": 524288,
+    "already_cached_tokens": 0,
+    "output_tokens_s": 125.1,
+    "prefill_tokens_s": 6810.0,
+    "ttft_ms": 417,
+    "prompt": "Not available",
+    "replication_limit": "Token counts matched locally; prompt, hardware, precision, speculative method and exact timing implementation differ."
+  },
+  "local": [
+    {
+      "profile": "RTX 5090 fast",
+      "engine": "ExLlamaV3 1.6.5",
+      "weights": "EXL3 3.55bpw",
+      "input_tokens": 2842,
+      "output_tokens": 2048,
+      "context_capacity": 8192,
+      "occupied_tokens": 4890,
+      "cached_tokens": 0,
+      "measured_requests": 3,
+      "kv_precision": "FP16",
+      "draft": "DFlash2 sparse16K",
+      "output_tokens_s": 116.92036447751205,
+      "prefill_tokens_s": 3130.0332292283188,
+      "prompt_tokens_per_ttft_s": 3068.332814698116,
+      "ttft_ms": 926.2358980049612,
+      "wall_s": 18.43403952900553,
+      "total_tokens_s": 265.27012662122695
+    },
+    {
+      "profile": "RTX 5090 max-capacity",
+      "engine": "ExLlamaV3 1.6.5",
+      "weights": "EXL3 3.55bpw",
+      "input_tokens": 2842,
+      "output_tokens": 2048,
+      "context_capacity": 480256,
+      "occupied_tokens": 4890,
+      "cached_tokens": 0,
+      "measured_requests": 3,
+      "kv_precision": "Q2",
+      "draft": "off",
+      "output_tokens_s": 70.41986902964717,
+      "prefill_tokens_s": 3156.912712915675,
+      "prompt_tokens_per_ttft_s": 3099.964399295486,
+      "ttft_ms": 916.7847219941905,
+      "wall_s": 29.985312270000577,
+      "total_tokens_s": 163.07984242312864
+    }
+  ],
+  "audit": "stats-audit.json"
+}

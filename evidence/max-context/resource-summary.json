@@ -1,0 +1,16 @@
+{
+  "window": "request enqueue through result saved; 1-second NVML samples including prefill and decode",
+  "samples": 1013,
+  "gpu_used_peak_MiB": 32171.0,
+  "gpu_used_median_MiB": 32027.0,
+  "temperature_peak_C": 79.0,
+  "power_peak_W": 606.08,
+  "gpu_utilization_median_percent": 100.0,
+  "model_weight_bpw": 3.55,
+  "kv_bits": 2,
+  "target_cache_GiB": 14.88525390625,
+  "device_free_at_final_snapshot_MiB": 157.25,
+  "torch_peak_allocated_GiB": 29.394623279571533,
+  "torch_peak_reserved_GiB": 29.419921875,
+  "mean_prefill_tokens_s": 478.89701931251676
+}

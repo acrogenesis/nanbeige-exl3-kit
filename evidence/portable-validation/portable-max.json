@@ -1,0 +1,121 @@
+{
+  "name": "chat",
+  "measured": false,
+  "seed": 20261025,
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "thinking": false,
+  "input_token_ids": [
+    166100,
+    8481,
+    13,
+    18215,
+    19433,
+    154675,
+    152372,
+    21863,
+    152672,
+    57437,
+    162001,
+    46372,
+    152590,
+    5004,
+    15825,
+    152435,
+    3237,
+    3942,
+    152389,
+    166101,
+    13,
+    166100,
+    2714,
+    13,
+    3512,
+    322,
+    152343,
+    152367,
+    152413,
+    33438,
+    415,
+    152343,
+    152375,
+    152385,
+    152470,
+    18550,
+    358,
+    849,
+    269,
+    8710,
+    152361,
+    166101,
+    13,
+    166100,
+    66354,
+    13,
+    166103,
+    13,
+    13,
+    166104,
+    13,
+    13
+  ],
+  "prompt_tokens": 52,
+  "output_tokens": 4,
+  "output_token_ids": [
+    152385,
+    152398,
+    152367,
+    166101
+  ],
+  "text": "391<|im_end|>",
+  "events": [
+    {
+      "seconds": 0.3474057869898388,
+      "token_ids": [
+        152385
+      ]
+    },
+    {
+      "seconds": 0.36725945500074886,
+      "token_ids": [
+        152398
+      ]
+    },
+    {
+      "seconds": 0.38181989699660335,
+      "token_ids": [
+        152367
+      ]
+    },
+    {
+      "seconds": 0.3953678719990421,
+      "token_ids": [
+        166101
+      ]
+    }
+  ],
+  "ttft_s": 0.3474057869898388,
+  "wall_s": 0.3954008719883859,
+  "decode_s": 0.04796208500920329,
+  "decode_tokens_s": 62.54940750437225,
+  "end_to_end_tokens_s": 10.116315575848025,
+  "terminal": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 0,
+    "eos_reason": "stop_token",
+    "eos_triggering_token_id": 166101,
+    "eos_triggering_token_str": "<|im_end|>",
+    "full_completion": "391",
+    "new_tokens": 4,
+    "prompt_tokens": 52,
+    "time_enqueued": 0.0015404224395751953,
+    "time_prefill": 0.2999563217163086,
+    "time_generate": 0.09357333183288574,
+    "cached_pages": 0,
+    "cached_tokens": 0
+  },
+  "draft_stats": [],
+  "gpu_peak_allocated_bytes": 30590576640,
+  "gpu_peak_reserved_bytes": 30603739136
+}

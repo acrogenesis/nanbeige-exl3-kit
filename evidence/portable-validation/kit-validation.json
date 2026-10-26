@@ -1,0 +1,16 @@
+{
+  "state": "passed",
+  "checks": {
+    "portable_fixed_length": {
+      "return_code": 0
+    },
+    "portable_archive": {
+      "return_code": 0,
+      "retrieval": {
+        "cedar": true,
+        "harbor": true,
+        "maple": true
+      }
+    }
+  }
+}

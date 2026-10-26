@@ -1,0 +1,11 @@
+{
+  "mode": "prefetch",
+  "sample_window": "Measured decode intervals only; exclude first-token time plus 2 seconds and final 1 second. Device-wide NVML throughput.",
+  "decode_samples": 173,
+  "median_pcie_rx_decimal_GB_s": 59.317402624,
+  "host_weight_decimal_GB": 40.1803,
+  "transfer_time_at_observed_bandwidth_s": 0.6773779400742495,
+  "transfer_only_tokens_s_at_observed_bandwidth": 1.4762807302085847,
+  "measured_512_input_decode_median_tokens_s": 1.3091217763190521,
+  "limits": "Calculated bandwidth comparison for this placement and single-stream schedule, not a measured hardware maximum or a universal bound on all inference strategies."
+}

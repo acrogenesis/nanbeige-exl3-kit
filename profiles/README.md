@@ -1,0 +1,1 @@
+Frozen ExLlamaV3 sparse draft vocabulary frequency profile used to seed the measured fast preset. It contains tokenizer token counts learned from our synthetic benchmark prompts; it is not model weights or a new drafter. SHA256: cfa21c7c9c0b7dccaf8e2f181c85c94c1bbb69ad2ad1303480c281f8608fc6c9

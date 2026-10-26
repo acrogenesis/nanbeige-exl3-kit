@@ -1,0 +1,371 @@
+{
+  "protocol": {
+    "model": "Nanbeige/Nanbeige4.3-33B",
+    "revision": "c1093c501cc6460427c0ac634db7223d0450c0ee",
+    "model_path": "${HOME}/.cache/huggingface/hub/models--Nanbeige--Nanbeige4.3-33B/snapshots/c1093c501cc6460427c0ac634db7223d0450c0ee",
+    "model_bytes": 66260066995,
+    "dtype": "bfloat16",
+    "context": 4096,
+    "kv_cache_bytes": 1073741824,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 2048,
+    "prefix_caching": false,
+    "enforce_eager": true,
+    "host": "127.0.0.1",
+    "port": 18733,
+    "warmup": {
+      "prompt_tokens": 64,
+      "output_tokens": 8
+    },
+    "measurements": [
+      {
+        "prompt_tokens": 512,
+        "output_tokens": 64,
+        "repeats": 3
+      },
+      {
+        "prompt_tokens": 2048,
+        "output_tokens": 64,
+        "repeats": 1
+      }
+    ],
+    "variants": {
+      "prefetch": {
+        "offload_backend": "prefetch",
+        "offload_group_size": 3,
+        "offload_num_in_group": 2,
+        "offload_prefetch_step": 1
+      },
+      "uva": {
+        "offload_backend": "uva",
+        "cpu_offload_gb": 38
+      }
+    },
+    "created_at": "2026-10-26T03:54:07.401215+00:00",
+    "startup_memory_limit_GiB": 80,
+    "startup_failure": "Initial prefetch3of4layers launch reached80GiB cgroup memory limit after weights read, before inference. Code inspection shows post-load processing temporarily retains an additional host copy. Reduced prefetch offload fraction to2of3layers and matched UVA host budget38GiB; retained failure logs.",
+    "prefetch_loader_workaround": "Benchmark-local LowPeakWorker skips device_loading_context only for exact UnquantizedLinearMethod with verified no-op post-load implementation on CUDA; decoding and weights unchanged. Stock prefetch failed at80/90GiB initlimits; logs preserved.",
+    "failed_prefetch_startup_limits_GiB": [
+      80,
+      90
+    ],
+    "observed_placements": {
+      "uva_host_weights_GiB": 38.23,
+      "uva_gpu_model_GiB": 23.61,
+      "prefetch_host_weights_decimal_GB": 40.1803,
+      "prefetch_static_buffer_decimal_GB": 1.1818
+    },
+    "completed_at": "2026-10-26T04:26:02.089593+00:00"
+  },
+  "modes": {
+    "uva": {
+      "state": "complete",
+      "error": null,
+      "measurements": [
+        {
+          "name": "pp512-tg64-0",
+          "measured": true,
+          "mode": "uva",
+          "started_epoch": 1792987881.4495394,
+          "ended_epoch": 1792988001.1518998,
+          "usage": {
+            "prompt_tokens": 512,
+            "total_tokens": 576,
+            "completion_tokens": 64
+          },
+          "ttft_s": 33.169284604002314,
+          "streamed_decode_s": 86.52843315199425,
+          "decode_tokens_s": 0.728084373021471,
+          "wall_s": 119.6979793099963,
+          "prefill_seconds_server": 33.166712600999745,
+          "prefill_tokens_s_server": 15.437164549873621,
+          "metric_deltas": {
+            "vllm:time_to_first_token_seconds_sum": 33.167877197265625,
+            "vllm:prompt_tokens_total": 512.0,
+            "vllm:request_decode_time_seconds_sum": 86.52867815500213,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:request_queue_time_seconds_sum": 1.0619995009619743e-05,
+            "vllm:request_prefill_time_seconds_sum": 33.166712600999745
+          },
+          "output": "# Design and Testing Approach: Case `pp512-tg64-0`\n\n## Overview\n\nThe service records provided under **Case `pp512-tg64-0`** describe a consistent service contract across all records (Records 0 through 12, with Record"
+        },
+        {
+          "name": "pp512-tg64-1",
+          "measured": true,
+          "mode": "uva",
+          "started_epoch": 1792988001.1548672,
+          "ended_epoch": 1792988104.255944,
+          "usage": {
+            "prompt_tokens": 512,
+            "total_tokens": 576,
+            "completion_tokens": 64
+          },
+          "ttft_s": 16.465798671997618,
+          "streamed_decode_s": 86.63103312900057,
+          "decode_tokens_s": 0.7272220787923415,
+          "wall_s": 103.09708325500105,
+          "prefill_seconds_server": 16.46316141600255,
+          "prefill_tokens_s_server": 31.09973759367535,
+          "metric_deltas": {
+            "vllm:time_to_first_token_seconds_sum": 16.464417934417725,
+            "vllm:prompt_tokens_total": 512.0,
+            "vllm:request_decode_time_seconds_sum": 86.6313894049963,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:request_queue_time_seconds_sum": 7.679998816456646e-06,
+            "vllm:request_prefill_time_seconds_sum": 16.46316141600255
+          },
+          "output": "# Design and Testing Approach: Case `pp512-tg64-1`\n\n## Overview\n\nThe service records provided under **Case `pp512-tg64-1`** describe a consistent service contract across all records (Records 0 through 12, with Record"
+        },
+        {
+          "name": "pp512-tg64-2",
+          "measured": true,
+          "mode": "uva",
+          "started_epoch": 1792988104.2590685,
+          "ended_epoch": 1792988207.2569616,
+          "usage": {
+            "prompt_tokens": 512,
+            "total_tokens": 576,
+            "completion_tokens": 64
+          },
+          "ttft_s": 16.4781816639952,
+          "streamed_decode_s": 86.51550740700623,
+          "decode_tokens_s": 0.7281931515886609,
+          "wall_s": 102.99395265599742,
+          "prefill_seconds_server": 16.47559332799574,
+          "prefill_tokens_s_server": 31.076270809015227,
+          "metric_deltas": {
+            "vllm:time_to_first_token_seconds_sum": 16.476911783218384,
+            "vllm:prompt_tokens_total": 512.0,
+            "vllm:request_decode_time_seconds_sum": 86.51584965299844,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:request_queue_time_seconds_sum": 1.245100429514423e-05,
+            "vllm:request_prefill_time_seconds_sum": 16.47559332799574
+          },
+          "output": "# Design and Testing Approach: Case `pp512-tg64-2`\n\n## Overview\n\nThe service records provided under **Case `pp512-tg64-2`** describe a consistent service contract across all records (Records 0 through 12, with Record"
+        },
+        {
+          "name": "pp2048-tg64-0",
+          "measured": true,
+          "mode": "uva",
+          "started_epoch": 1792988207.2600036,
+          "ended_epoch": 1792988350.8143642,
+          "usage": {
+            "prompt_tokens": 2048,
+            "total_tokens": 2112,
+            "completion_tokens": 64
+          },
+          "ttft_s": 55.77846677599882,
+          "streamed_decode_s": 87.77159271299752,
+          "decode_tokens_s": 0.7177720951926027,
+          "wall_s": 143.5503016540024,
+          "prefill_seconds_server": 55.775036892999196,
+          "prefill_tokens_s_server": 36.71893581942322,
+          "metric_deltas": {
+            "vllm:time_to_first_token_seconds_sum": 55.776517391204834,
+            "vllm:prompt_tokens_total": 2048.0,
+            "vllm:request_decode_time_seconds_sum": 87.7725462610033,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:request_queue_time_seconds_sum": 7.481001375708729e-06,
+            "vllm:request_prefill_time_seconds_sum": 55.775036892999196
+          },
+          "output": "# Design and Testing Approach: Case `pp2048-tg64-0`\n\n## Overview\n\nThe service records provided (Records 0 through 56) describe an identical functional contract across all instances:\n\n> *\"The service accepts requests, validates input, reads stored data"
+        }
+      ],
+      "pp512_decode_median_tokens_s": 0.728084373021471,
+      "pp512_ttft_median_s": 16.4781816639952,
+      "pp512_prefill_median_tokens_s": 31.076270809015227,
+      "resources": {
+        "samples": 451,
+        "gpu_used_bytes": {
+          "median": 29562568704,
+          "peak": 29843783680
+        },
+        "gpu_util_pct": {
+          "median": 100,
+          "peak": 100
+        },
+        "power_watts": {
+          "median": 139.356,
+          "peak": 228.101
+        },
+        "temperature_c": {
+          "median": 56,
+          "peak": 59
+        },
+        "pcie_rx_KiB_s": {
+          "median": 35365727,
+          "peak": 43588110
+        },
+        "pcie_tx_KiB_s": {
+          "median": 7658710,
+          "peak": 9251591
+        },
+        "cgroup_memory.current": {
+          "median": 85858115584,
+          "peak": 85899341824
+        },
+        "global_swap_in_pages_delta": 75727,
+        "global_swap_out_pages_delta": 0,
+        "benchmark_cgroup_swap_peak_bytes": 0
+      }
+    },
+    "prefetch": {
+      "state": "complete",
+      "error": null,
+      "measurements": [
+        {
+          "name": "pp512-tg64-0",
+          "measured": true,
+          "mode": "prefetch",
+          "started_epoch": 1792988404.4688332,
+          "ended_epoch": 1792988453.439302,
+          "usage": {
+            "prompt_tokens": 512,
+            "total_tokens": 576,
+            "completion_tokens": 64
+          },
+          "ttft_s": 0.8419056499988073,
+          "streamed_decode_s": 48.12386528099887,
+          "decode_tokens_s": 1.3091217763190521,
+          "wall_s": 48.966128587999265,
+          "prefill_seconds_server": 0.8392694509966532,
+          "prefill_tokens_s_server": 610.0543745420346,
+          "metric_deltas": {
+            "vllm:request_queue_time_seconds_sum": 6.920003215782344e-06,
+            "vllm:time_to_first_token_seconds_sum": 0.8404252529144287,
+            "vllm:request_decode_time_seconds_sum": 48.12378261900449,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:prompt_tokens_total": 512.0,
+            "vllm:request_prefill_time_seconds_sum": 0.8392694509966532
+          },
+          "output": "# Design and Testing Approach: Case `pp512-tg64-0`\n\n## Overview\n\nThe service records provided under **Case `pp512-tg64-0`** describe a consistent service contract across all records (Records 0 through 12, with Record"
+        },
+        {
+          "name": "pp512-tg64-1",
+          "measured": true,
+          "mode": "prefetch",
+          "started_epoch": 1792988453.4430256,
+          "ended_epoch": 1792988502.1696732,
+          "usage": {
+            "prompt_tokens": 512,
+            "total_tokens": 576,
+            "completion_tokens": 64
+          },
+          "ttft_s": 0.8410700710010133,
+          "streamed_decode_s": 47.88092724500166,
+          "decode_tokens_s": 1.3157639925734028,
+          "wall_s": 48.72223173100065,
+          "prefill_seconds_server": 0.8380887449966394,
+          "prefill_tokens_s_server": 610.9138239316804,
+          "metric_deltas": {
+            "vllm:request_queue_time_seconds_sum": 7.0210007834248245e-06,
+            "vllm:time_to_first_token_seconds_sum": 0.8393101692199707,
+            "vllm:request_decode_time_seconds_sum": 47.881487906000984,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:prompt_tokens_total": 512.0,
+            "vllm:request_prefill_time_seconds_sum": 0.8380887449966394
+          },
+          "output": "# Design and Testing Approach: Case `pp512-tg64-1`\n\n## Overview\n\nThe service records provided under **Case `pp512-tg64-1`** describe a consistent service contract across all records (Records 0 through 12, with Record"
+        },
+        {
+          "name": "pp512-tg64-2",
+          "measured": true,
+          "mode": "prefetch",
+          "started_epoch": 1792988502.1726274,
+          "ended_epoch": 1792988551.652559,
+          "usage": {
+            "prompt_tokens": 512,
+            "total_tokens": 576,
+            "completion_tokens": 64
+          },
+          "ttft_s": 0.846931489999406,
+          "streamed_decode_s": 48.628579789998184,
+          "decode_tokens_s": 1.295534442339558,
+          "wall_s": 49.4757807759961,
+          "prefill_seconds_server": 0.8447588679991895,
+          "prefill_tokens_s_server": 606.090115647642,
+          "metric_deltas": {
+            "vllm:request_queue_time_seconds_sum": 5.481000698637217e-06,
+            "vllm:time_to_first_token_seconds_sum": 0.8457355499267578,
+            "vllm:request_decode_time_seconds_sum": 48.628302404998976,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:prompt_tokens_total": 512.0,
+            "vllm:request_prefill_time_seconds_sum": 0.8447588679991895
+          },
+          "output": "# Design and Testing Approach: Case `pp512-tg64-2`\n\n## Overview\n\nThe service records provided under **Case `pp512-tg64-2`** describe a consistent service contract across all records (Records 0 through 12, with Record"
+        },
+        {
+          "name": "pp2048-tg64-0",
+          "measured": true,
+          "mode": "prefetch",
+          "started_epoch": 1792988551.6558568,
+          "ended_epoch": 1792988600.7465465,
+          "usage": {
+            "prompt_tokens": 2048,
+            "total_tokens": 2112,
+            "completion_tokens": 64
+          },
+          "ttft_s": 1.1653618149939575,
+          "streamed_decode_s": 47.920740871006274,
+          "decode_tokens_s": 1.3146708263460343,
+          "wall_s": 49.086329590994865,
+          "prefill_seconds_server": 1.162154304998694,
+          "prefill_tokens_s_server": 1762.2444723485335,
+          "metric_deltas": {
+            "vllm:request_queue_time_seconds_sum": 9.759998647496104e-06,
+            "vllm:time_to_first_token_seconds_sum": 1.1633713245391846,
+            "vllm:request_decode_time_seconds_sum": 47.92175231099827,
+            "vllm:generation_tokens_total": 64.0,
+            "vllm:prompt_tokens_total": 2048.0,
+            "vllm:request_prefill_time_seconds_sum": 1.162154304998694
+          },
+          "output": "# Design and Testing Approach: Case `pp2048-tg64-0`\n\n## Overview\n\nThe service records provided (Records 0 through 56) describe an identical functional contract across all instances:\n\n> *\"The service accepts requests, validates input, reads stored data"
+        }
+      ],
+      "pp512_decode_median_tokens_s": 1.3091217763190521,
+      "pp512_ttft_median_s": 0.8419056499988073,
+      "pp512_prefill_median_tokens_s": 610.0543745420346,
+      "resources": {
+        "samples": 188,
+        "gpu_used_bytes": {
+          "median": 31745048576.0,
+          "peak": 31758024704
+        },
+        "gpu_util_pct": {
+          "median": 100.0,
+          "peak": 100
+        },
+        "power_watts": {
+          "median": 144.065,
+          "peak": 384.459
+        },
+        "temperature_c": {
+          "median": 55.0,
+          "peak": 65
+        },
+        "pcie_rx_KiB_s": {
+          "median": 57882855.5,
+          "peak": 61138049
+        },
+        "pcie_tx_KiB_s": {
+          "median": 5580640.5,
+          "peak": 6208464
+        },
+        "cgroup_memory.current": {
+          "median": 85898563584.0,
+          "peak": 85899333632
+        },
+        "global_swap_in_pages_delta": 10837,
+        "global_swap_out_pages_delta": 0,
+        "benchmark_cgroup_swap_peak_bytes": 0
+      }
+    }
+  },
+  "generated_at": "2026-10-26T04:26:02.187347+00:00",
+  "greedy_output_matches": {
+    "pp512-tg64-2": true,
+    "pp2048-tg64-0": true,
+    "pp512-tg64-1": true,
+    "pp512-tg64-0": true
+  }
+}

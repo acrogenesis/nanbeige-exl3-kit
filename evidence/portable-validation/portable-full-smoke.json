@@ -1,0 +1,990 @@
+{
+  "settings": {
+    "capacity": 8192,
+    "target_dir": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-EXL3/snapshots/56a23706262458b23ba7dde5ba1eea053a109544",
+    "draft_dir": null,
+    "input_tokens": 4096,
+    "target_bits": 2,
+    "draft_bits": 0,
+    "no_draft": true,
+    "output_tokens": 128,
+    "temperature": 0.6,
+    "label": "portable-full-smoke"
+  },
+  "state": "complete",
+  "started_epoch": 1793027547.7483864,
+  "target_dir": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-EXL3/snapshots/56a23706262458b23ba7dde5ba1eea053a109544",
+  "draft_dir": null,
+  "versions": {
+    "torch": "2.13.0+cu132",
+    "exllamav3": "1.6.5+cu132.torch2.13.0",
+    "transformers": "4.57.6"
+  },
+  "markers": [
+    {
+      "key": "cedar",
+      "value": "cobalt-lantern-8136",
+      "token_position": 159
+    },
+    {
+      "key": "harbor",
+      "value": "silver-meadow-4729",
+      "token_position": 2049
+    },
+    {
+      "key": "maple",
+      "value": "violet-compass-9264",
+      "token_position": 3780
+    }
+  ],
+  "prompt_sha256": "dbc6ad51e0b541b1d8883f89722887d0aecde94a9fc99b7ef806e27187642563",
+  "target_cache_bytes": 272629760,
+  "draft_cache_bytes": 0,
+  "memory_after_warmup": {
+    "free_bytes": 16766468096,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 14879908352,
+    "torch_reserved_bytes": 14887682048,
+    "torch_peak_allocated_bytes": 14880311808,
+    "torch_peak_reserved_bytes": 14887682048
+  },
+  "request_started_epoch": 1793027550.6915565,
+  "ttft_s": 1.9816498690051958,
+  "events": [
+    {
+      "seconds": 1.9816498690051958,
+      "token_ids": [
+        7255
+      ]
+    },
+    {
+      "seconds": 1.9972817660018336,
+      "token_ids": [
+        5174
+      ]
+    },
+    {
+      "seconds": 2.0122831420012517,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.0273358580016065,
+      "token_ids": [
+        152405
+      ]
+    },
+    {
+      "seconds": 2.041141162000713,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.054907574012759,
+      "token_ids": [
+        259
+      ]
+    },
+    {
+      "seconds": 2.0697722070035525,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 2.083535350000602,
+      "token_ids": [
+        761
+      ]
+    },
+    {
+      "seconds": 2.098286721011391,
+      "token_ids": [
+        287
+      ]
+    },
+    {
+      "seconds": 2.113175044010859,
+      "token_ids": [
+        1832
+      ]
+    },
+    {
+      "seconds": 2.128035797009943,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 2.1417944700078806,
+      "token_ids": [
+        152355
+      ]
+    },
+    {
+      "seconds": 2.155527852009982,
+      "token_ids": [
+        35959
+      ]
+    },
+    {
+      "seconds": 2.170288833003724,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 2.1841785380092915,
+      "token_ids": [
+        16219
+      ]
+    },
+    {
+      "seconds": 2.199097442004131,
+      "token_ids": [
+        842
+      ]
+    },
+    {
+      "seconds": 2.213912153005367,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 2.22821157600265,
+      "token_ids": [
+        152411
+      ]
+    },
+    {
+      "seconds": 2.242262344007031,
+      "token_ids": [
+        152367
+      ]
+    },
+    {
+      "seconds": 2.2559715360112023,
+      "token_ids": [
+        152385
+      ]
+    },
+    {
+      "seconds": 2.270850608998444,
+      "token_ids": [
+        152408
+      ]
+    },
+    {
+      "seconds": 2.2845971310016466,
+      "token_ids": [
+        748
+      ]
+    },
+    {
+      "seconds": 2.299465094009065,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.3143492770032026,
+      "token_ids": [
+        259
+      ]
+    },
+    {
+      "seconds": 2.3287955230043735,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 2.343125915998826,
+      "token_ids": [
+        12131
+      ]
+    },
+    {
+      "seconds": 2.3569421990105184,
+      "token_ids": [
+        4364
+      ]
+    },
+    {
+      "seconds": 2.371914804010885,
+      "token_ids": [
+        1832
+      ]
+    },
+    {
+      "seconds": 2.38569847701001,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 2.4005169490119442,
+      "token_ids": [
+        83330
+      ]
+    },
+    {
+      "seconds": 2.4152522100048373,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 2.4296179140073946,
+      "token_ids": [
+        1692
+      ]
+    },
+    {
+      "seconds": 2.4439117959991563,
+      "token_ids": [
+        10282
+      ]
+    },
+    {
+      "seconds": 2.4577128590026405,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 2.472729615008575,
+      "token_ids": [
+        152395
+      ]
+    },
+    {
+      "seconds": 2.4865539290040033,
+      "token_ids": [
+        152413
+      ]
+    },
+    {
+      "seconds": 2.50163784599863,
+      "token_ids": [
+        152375
+      ]
+    },
+    {
+      "seconds": 2.516523729005712,
+      "token_ids": [
+        152398
+      ]
+    },
+    {
+      "seconds": 2.5309813950007083,
+      "token_ids": [
+        748
+      ]
+    },
+    {
+      "seconds": 2.5453523879987188,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.55924115300877,
+      "token_ids": [
+        259
+      ]
+    },
+    {
+      "seconds": 2.574291249999078,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 2.5881282140035182,
+      "token_ids": [
+        3598
+      ]
+    },
+    {
+      "seconds": 2.6030318070115754,
+      "token_ids": [
+        296
+      ]
+    },
+    {
+      "seconds": 2.618076374012162,
+      "token_ids": [
+        1832
+      ]
+    },
+    {
+      "seconds": 2.6324882680055453,
+      "token_ids": [
+        471
+      ]
+    },
+    {
+      "seconds": 2.6469121130066924,
+      "token_ids": [
+        80847
+      ]
+    },
+    {
+      "seconds": 2.660770128000877,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 2.675835824004025,
+      "token_ids": [
+        19144
+      ]
+    },
+    {
+      "seconds": 2.689683098011301,
+      "token_ids": [
+        152369
+      ]
+    },
+    {
+      "seconds": 2.7045928220031783,
+      "token_ids": [
+        152398
+      ]
+    },
+    {
+      "seconds": 2.719597078001243,
+      "token_ids": [
+        152375
+      ]
+    },
+    {
+      "seconds": 2.73409963400627,
+      "token_ids": [
+        152408
+      ]
+    },
+    {
+      "seconds": 2.748379366006702,
+      "token_ids": [
+        152395
+      ]
+    },
+    {
+      "seconds": 2.762264821009012,
+      "token_ids": [
+        152383
+      ]
+    },
+    {
+      "seconds": 2.777462090001791,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.791314764006529,
+      "token_ids": [
+        152406
+      ]
+    },
+    {
+      "seconds": 2.8062273079995066,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.821405897004297,
+      "token_ids": [
+        7255
+      ]
+    },
+    {
+      "seconds": 2.8358009310031775,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.849813148000976,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 2.863647842008504,
+      "token_ids": [
+        4031
+      ]
+    },
+    {
+      "seconds": 2.878688068012707,
+      "token_ids": [
+        59446
+      ]
+    },
+    {
+      "seconds": 2.892536783008836,
+      "token_ids": [
+        6076
+      ]
+    },
+    {
+      "seconds": 2.9074669770052424,
+      "token_ids": [
+        8242
+      ]
+    },
+    {
+      "seconds": 2.9225197129999287,
+      "token_ids": [
+        6190
+      ]
+    },
+    {
+      "seconds": 2.9369503580091987,
+      "token_ids": [
+        50444
+      ]
+    },
+    {
+      "seconds": 2.9510238470102195,
+      "token_ids": [
+        22284
+      ]
+    },
+    {
+      "seconds": 2.9648758610128425,
+      "token_ids": [
+        442
+      ]
+    },
+    {
+      "seconds": 2.9799052770104026,
+      "token_ids": [
+        78430
+      ]
+    },
+    {
+      "seconds": 2.993745491010486,
+      "token_ids": [
+        10430
+      ]
+    },
+    {
+      "seconds": 3.008677585006808,
+      "token_ids": [
+        22284
+      ]
+    },
+    {
+      "seconds": 3.0235280680062715,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 3.0384026410029037,
+      "token_ids": [
+        13
+      ]
+    },
+    {
+      "seconds": 3.0521731540065957,
+      "token_ids": [
+        2281
+      ]
+    },
+    {
+      "seconds": 3.0659289760078536,
+      "token_ids": [
+        8725
+      ]
+    },
+    {
+      "seconds": 3.080899350999971,
+      "token_ids": [
+        15982
+      ]
+    },
+    {
+      "seconds": 3.0946856240043417,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 3.109490596005344,
+      "token_ids": [
+        1358
+      ]
+    },
+    {
+      "seconds": 3.124306128011085,
+      "token_ids": [
+        59163
+      ]
+    },
+    {
+      "seconds": 3.138892996008508,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 3.152844232012285,
+      "token_ids": [
+        72642
+      ]
+    },
+    {
+      "seconds": 3.1665247030032333,
+      "token_ids": [
+        1798
+      ]
+    },
+    {
+      "seconds": 3.181331105006393,
+      "token_ids": [
+        152386
+      ]
+    },
+    {
+      "seconds": 3.1950292360124877,
+      "token_ids": [
+        84775
+      ]
+    },
+    {
+      "seconds": 3.2097794670116855,
+      "token_ids": [
+        152608
+      ]
+    },
+    {
+      "seconds": 3.2245597090077354,
+      "token_ids": [
+        15520
+      ]
+    },
+    {
+      "seconds": 3.2388434410095215,
+      "token_ids": [
+        442
+      ]
+    },
+    {
+      "seconds": 3.252893919008784,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 3.2665608399984194,
+      "token_ids": [
+        13742
+      ]
+    },
+    {
+      "seconds": 3.2814205620088615,
+      "token_ids": [
+        2438
+      ]
+    },
+    {
+      "seconds": 3.29513511400728,
+      "token_ids": [
+        7299
+      ]
+    },
+    {
+      "seconds": 3.309872745012399,
+      "token_ids": [
+        152363
+      ]
+    },
+    {
+      "seconds": 3.3246809570118785,
+      "token_ids": [
+        284
+      ]
+    },
+    {
+      "seconds": 3.3390298099984648,
+      "token_ids": [
+        6727
+      ]
+    },
+    {
+      "seconds": 3.353606008007773,
+      "token_ids": [
+        1539
+      ]
+    },
+    {
+      "seconds": 3.3676676059985766,
+      "token_ids": [
+        865
+      ]
+    },
+    {
+      "seconds": 3.382705642012297,
+      "token_ids": [
+        1766
+      ]
+    },
+    {
+      "seconds": 3.396543326001847,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 3.411462970005232,
+      "token_ids": [
+        8006
+      ]
+    },
+    {
+      "seconds": 3.4264069850032683,
+      "token_ids": [
+        7286
+      ]
+    },
+    {
+      "seconds": 3.440747258006013,
+      "token_ids": [
+        297
+      ]
+    },
+    {
+      "seconds": 3.4549557190039195,
+      "token_ids": [
+        22301
+      ]
+    },
+    {
+      "seconds": 3.468777551999665,
+      "token_ids": [
+        4121
+      ]
+    },
+    {
+      "seconds": 3.4837893980002264,
+      "token_ids": [
+        840
+      ]
+    },
+    {
+      "seconds": 3.4976135720062302,
+      "token_ids": [
+        269
+      ]
+    },
+    {
+      "seconds": 3.5124518140073633,
+      "token_ids": [
+        804
+      ]
+    },
+    {
+      "seconds": 3.5274077089998173,
+      "token_ids": [
+        3033
+      ]
+    },
+    {
+      "seconds": 3.5418391240091296,
+      "token_ids": [
+        5916
+      ]
+    },
+    {
+      "seconds": 3.5560365749988705,
+      "token_ids": [
+        152361
+      ]
+    },
+    {
+      "seconds": 3.5698915690009017,
+      "token_ids": [
+        78430
+      ]
+    },
+    {
+      "seconds": 3.5851846000005025,
+      "token_ids": [
+        2438
+      ]
+    },
+    {
+      "seconds": 3.599010272999294,
+      "token_ids": [
+        7299
+      ]
+    },
+    {
+      "seconds": 3.6143628650024766,
+      "token_ids": [
+        326
+      ]
+    },
+    {
+      "seconds": 3.6295473940117517,
+      "token_ids": [
+        152344
+      ]
+    },
+    {
+      "seconds": 3.6439408480073325,
+      "token_ids": [
+        152361
+      ]
+    },
+    {
+      "seconds": 3.6579761460016016,
+      "token_ids": [
+        152360
+      ]
+    },
+    {
+      "seconds": 3.6718028700124705,
+      "token_ids": [
+        674
+      ]
+    },
+    {
+      "seconds": 3.686965989007149,
+      "token_ids": [
+        1495
+      ]
+    },
+    {
+      "seconds": 3.700810693000676,
+      "token_ids": [
+        5062
+      ]
+    },
+    {
+      "seconds": 3.7156127040070714,
+      "token_ids": [
+        152343
+      ]
+    },
+    {
+      "seconds": 3.7305204380099894,
+      "token_ids": [
+        152368
+      ]
+    },
+    {
+      "seconds": 3.744979264010908,
+      "token_ids": [
+        152368
+      ]
+    },
+    {
+      "seconds": 3.7590203610016033,
+      "token_ids": [
+        152368
+      ]
+    },
+    {
+      "seconds": 3.7728403549990617,
+      "token_ids": [
+        152368
+      ]
+    },
+    {
+      "seconds": 3.7880435840052087,
+      "token_ids": [
+        152368
+      ]
+    },
+    {
+      "seconds": 3.8019152990018483,
+      "token_ids": [
+        152368
+      ]
+    },
+    {
+      "seconds": 3.817432904004818,
+      "token_ids": [
+        10708
+      ]
+    }
+  ],
+  "output_tokens": 128,
+  "output_token_ids": [
+    7255,
+    5174,
+    13,
+    152405,
+    13,
+    259,
+    152383,
+    761,
+    287,
+    1832,
+    471,
+    152355,
+    35959,
+    152369,
+    16219,
+    842,
+    152369,
+    152411,
+    152367,
+    152385,
+    152408,
+    748,
+    13,
+    259,
+    152383,
+    12131,
+    4364,
+    1832,
+    471,
+    83330,
+    152369,
+    1692,
+    10282,
+    152369,
+    152395,
+    152413,
+    152375,
+    152398,
+    748,
+    13,
+    259,
+    152383,
+    3598,
+    296,
+    1832,
+    471,
+    80847,
+    152369,
+    19144,
+    152369,
+    152398,
+    152375,
+    152408,
+    152395,
+    152383,
+    13,
+    152406,
+    13,
+    7255,
+    13,
+    13,
+    4031,
+    59446,
+    6076,
+    8242,
+    6190,
+    50444,
+    22284,
+    442,
+    78430,
+    10430,
+    22284,
+    13,
+    13,
+    2281,
+    8725,
+    15982,
+    269,
+    1358,
+    59163,
+    1495,
+    72642,
+    1798,
+    152386,
+    84775,
+    152608,
+    15520,
+    442,
+    269,
+    13742,
+    2438,
+    7299,
+    152363,
+    284,
+    6727,
+    1539,
+    865,
+    1766,
+    269,
+    8006,
+    7286,
+    297,
+    22301,
+    4121,
+    840,
+    269,
+    804,
+    3033,
+    5916,
+    152361,
+    78430,
+    2438,
+    7299,
+    326,
+    152344,
+    152361,
+    152360,
+    674,
+    1495,
+    5062,
+    152343,
+    152368,
+    152368,
+    152368,
+    152368,
+    152368,
+    152368,
+    10708
+  ],
+  "text": "```json\n{\n  \"cedar\": \"cobalt-lantern-8136\",\n  \"harbor\": \"silver-meadow-4729\",\n  \"maple\": \"violet-compass-9264\"\n}\n```\n\n### Distinguishing Authoritative Audit Records from Ordinary Event Records\n\nTo properly distinguish the three authoritative `AUDIT_SECRET` entries from the ordinary event records, an operator must first understand the fundamental structural and semantic differences between the two record classes. Ordinary event records (e.g., `Event 000000`,",
+  "terminal": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 0,
+    "eos_reason": "max_new_tokens",
+    "text": "`,",
+    "full_completion": "```json\n{\n  \"cedar\": \"cobalt-lantern-8136\",\n  \"harbor\": \"silver-meadow-4729\",\n  \"maple\": \"violet-compass-9264\"\n}\n```\n\n### Distinguishing Authoritative Audit Records from Ordinary Event Records\n\nTo properly distinguish the three authoritative `AUDIT_SECRET` entries from the ordinary event records, an operator must first understand the fundamental structural and semantic differences between the two record classes. Ordinary event records (e.g., `Event 000000`,",
+    "new_tokens": 128,
+    "prompt_tokens": 4096,
+    "time_enqueued": 9.393692016601562e-05,
+    "time_prefill": 1.96720290184021,
+    "time_generate": 1.8496768474578857,
+    "cached_pages": 0,
+    "cached_tokens": 0
+  },
+  "wall_s": 3.8176580280123744,
+  "decode_s": 1.835783034999622,
+  "decode_tokens_s": 69.18028850834551,
+  "end_to_end_tokens_s": 33.528409056230196,
+  "occupied_context_tokens": 4224,
+  "memory_final": {
+    "free_bytes": 15780806656,
+    "total_bytes": 33763426304,
+    "torch_allocated_bytes": 14879936000,
+    "torch_reserved_bytes": 15873343488,
+    "torch_peak_allocated_bytes": 15851939328,
+    "torch_peak_reserved_bytes": 15873343488
+  },
+  "retrieval": {
+    "cedar": true,
+    "harbor": true,
+    "maple": true
+  },
+  "retrieval_passed": true,
+  "completed_epoch": 1793027554.5097978
+}

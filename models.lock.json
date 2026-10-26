@@ -1,0 +1,19 @@
+{
+  "target": {
+    "repo_id": "acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
+    "revision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+    "upstream_repo_id": "ProCreations/Nanbeige4.3-33B-EXL3",
+    "upstream_revision": "56a23706262458b23ba7dde5ba1eea053a109544"
+  },
+  "draft": {
+    "repo_id": "ProCreations/Nanbeige4.3-33B-DFlash2",
+    "revision": "4b7c7f8509d5286b7264db096d764b4a163d74f4"
+  },
+  "engine": {
+    "repo_id": "turboderp-org/exllamav3",
+    "version": "1.6.5+cu132.torch2.13.0",
+    "commit": "cdc785db89e263e65e5849cb53e1ada156411414",
+    "source_mirror": "https://github.com/acrogenesis/exllamav3/tree/nanbeige-tested-v1.6.5",
+    "wheel_url": "https://github.com/turboderp-org/exllamav3/releases/download/v1.6.5/exllamav3-1.6.5%2Bcu132.torch2.13.0-cp312-cp312-linux_x86_64.whl"
+  }
+}

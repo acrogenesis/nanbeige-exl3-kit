@@ -1,0 +1,55 @@
+{
+  "base": "base-f16.json",
+  "inference_workspace_and_desktop_reserve_bytes": 1073741824,
+  "cache_budget_bytes": 12895059968,
+  "estimates": [
+    {
+      "target_bits": 0,
+      "draft_bits": 0,
+      "cache_bytes_per_token": 219136.0,
+      "predicted_capacity_with_1GiB_free": 58624,
+      "cache_GiB_at_capacity": 11.96435546875,
+      "cache_GiB_at_model_512K": 107.0
+    },
+    {
+      "target_bits": 8,
+      "draft_bits": 8,
+      "cache_bytes_per_token": 116416.0,
+      "predicted_capacity_with_1GiB_free": 110592,
+      "cache_GiB_at_capacity": 11.990478515625,
+      "cache_GiB_at_model_512K": 56.84375
+    },
+    {
+      "target_bits": 6,
+      "draft_bits": 6,
+      "cache_bytes_per_token": 89024.0,
+      "predicted_capacity_with_1GiB_free": 144640,
+      "cache_GiB_at_capacity": 11.992111206054688,
+      "cache_GiB_at_model_512K": 43.46875
+    },
+    {
+      "target_bits": 4,
+      "draft_bits": 4,
+      "cache_bytes_per_token": 61632.0,
+      "predicted_capacity_with_1GiB_free": 209152,
+      "cache_GiB_at_capacity": 12.005172729492188,
+      "cache_GiB_at_model_512K": 30.09375
+    },
+    {
+      "target_bits": 3,
+      "draft_bits": 3,
+      "cache_bytes_per_token": 47936.0,
+      "predicted_capacity_with_1GiB_free": 268800,
+      "cache_GiB_at_capacity": 12.000274658203125,
+      "cache_GiB_at_model_512K": 23.40625
+    },
+    {
+      "target_bits": 2,
+      "draft_bits": 2,
+      "cache_bytes_per_token": 34240.0,
+      "predicted_capacity_with_1GiB_free": 376576,
+      "cache_GiB_at_capacity": 12.008438110351562,
+      "cache_GiB_at_model_512K": 16.71875
+    }
+  ]
+}

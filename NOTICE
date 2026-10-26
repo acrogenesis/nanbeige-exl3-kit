@@ -1,0 +1,11 @@
+Nanbeige EXL3 inference kit
+
+Launchers, benchmark harness and measured evidence by acrogenesis, 2026.
+No new model training, quantization or inference engine is claimed.
+
+Original model: Nanbeige/Nanbeige4.3-33B, Apache-2.0.
+EXL3 quantization: ProCreations/Nanbeige4.3-33B-EXL3, Apache-2.0.
+Optional native drafter: ProCreations/Nanbeige4.3-33B-DFlash2.
+Engine: turboderp-org/exllamav3 v1.6.5, separate upstream software.
+Weights and the upstream engine are not bundled in this Git repository.
+See models.lock.json for pinned revisions and original sources.

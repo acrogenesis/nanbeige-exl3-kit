@@ -1,0 +1,16 @@
+{
+  "fast": {
+    "window": "model load, warmup and three measured requests; one-second NVML samples",
+    "samples": 78,
+    "peak_gpu_used_MiB": 20717.0,
+    "peak_gpu_temperature_C": 75.0,
+    "peak_gpu_power_W": 591.48
+  },
+  "max": {
+    "window": "model load, warmup and three measured requests; one-second NVML samples",
+    "samples": 122,
+    "peak_gpu_used_MiB": 32124.0,
+    "peak_gpu_temperature_C": 75.0,
+    "peak_gpu_power_W": 567.76
+  }
+}

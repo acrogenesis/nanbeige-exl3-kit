@@ -1,0 +1,12 @@
+{
+  "state": "passed",
+  "requests": 15,
+  "domains": 5,
+  "repeats": 3,
+  "median_decode_tokens_s": 103.40416238210533,
+  "pooled_decode_tokens_s": 101.76693398540765,
+  "event_counts_and_timing_checked": true,
+  "zero_prompt_cache_reuse": true,
+  "output_tokens_per_request": 384,
+  "limits": "Short prompts, non-thinking, 3.55-bit target, adaptive drafting vocabulary; not every request reaches 100 tokens/s."
+}

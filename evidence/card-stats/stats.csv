@@ -1,0 +1,3 @@
+profile,engine,weights,input_tokens,output_tokens,context_capacity,occupied_tokens,cached_tokens,measured_requests,kv_precision,draft,output_tokens_s,prefill_tokens_s,prompt_tokens_per_ttft_s,ttft_ms,wall_s,total_tokens_s
+RTX 5090 fast,ExLlamaV3 1.6.5,EXL3 3.55bpw,2842,2048,8192,4890,0,3,FP16,DFlash2 sparse16K,116.92036447751205,3130.0332292283188,3068.332814698116,926.2358980049612,18.43403952900553,265.27012662122695
+RTX 5090 max-capacity,ExLlamaV3 1.6.5,EXL3 3.55bpw,2842,2048,480256,4890,0,3,Q2,off,70.41986902964717,3156.912712915675,3099.964399295486,916.7847219941905,29.985312270000577,163.07984242312864

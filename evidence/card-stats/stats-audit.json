@@ -1,0 +1,49 @@
+{
+  "state": "passed",
+  "input_tokens": 2842,
+  "output_tokens": 2048,
+  "occupied_tokens": 4890,
+  "prompt_sha256": "8b5f4cd519a18460e5cdb885332618e6e62ab8e32572cbaa464f66f33151679d",
+  "profiles": {
+    "fast": {
+      "capacity": 8192,
+      "weight_bpw": 3.55,
+      "kv_bits": 0,
+      "draft": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-DFlash2/snapshots/4b7c7f8509d5286b7264db096d764b4a163d74f4",
+      "measured_requests": 3,
+      "medians": {
+        "output_tokens_s": 116.92036447751205,
+        "prefill_tokens_s": 3130.0332292283188,
+        "prompt_tokens_per_ttft_s": 3068.332814698116,
+        "ttft_ms": 926.2358980049612,
+        "wall_s": 18.43403952900553,
+        "total_tokens_s": 265.27012662122695
+      },
+      "output_rate_range": [
+        116.5682038937019,
+        117.1044738215046
+      ],
+      "all_measured_outputs_identical": true
+    },
+    "max": {
+      "capacity": 480256,
+      "weight_bpw": 3.55,
+      "kv_bits": 2,
+      "draft": null,
+      "measured_requests": 3,
+      "medians": {
+        "output_tokens_s": 70.41986902964717,
+        "prefill_tokens_s": 3156.912712915675,
+        "prompt_tokens_per_ttft_s": 3099.964399295486,
+        "ttft_ms": 916.7847219941905,
+        "wall_s": 29.985312270000577,
+        "total_tokens_s": 163.07984242312864
+      },
+      "output_rate_range": [
+        70.36423380037009,
+        71.73427819145411
+      ],
+      "all_measured_outputs_identical": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "runtime_python": "${HOME}/.venvs/nanbeige-exl3-165/bin/python",
+  "target_revision": "56a23706262458b23ba7dde5ba1eea053a109544",
+  "draft_revision": "4b7c7f8509d5286b7264db096d764b4a163d74f4",
+  "benchmark_settings": {
+    "mode": "draft",
+    "label": "draft7-3.55-t06-nothinking-f16kv-v165-sparse16k-device",
+    "target_dir": "${HOME}/.cache/huggingface/hub/models--ProCreations--Nanbeige4.3-33B-EXL3/snapshots/56a23706262458b23ba7dde5ba1eea053a109544",
+    "draft_dir": null,
+    "cache_tokens": 8192,
+    "kv_bits": 0,
+    "temperature": 0.6,
+    "thinking": false,
+    "output_tokens": 384,
+    "repeats": 3,
+    "proposals": 7,
+    "sparse_draft_head": 16384,
+    "only": null
+  },
+  "versions": {
+    "torch": "2.13.0+cu132",
+    "exllamav3": "1.6.5+cu132.torch2.13.0",
+    "transformers": "4.57.6"
+  },
+  "results_file": "draft7-3.55-t06-nothinking-f16kv-v165-sparse16k-device.json",
+  "profile": "runtime-profile-seed.json",
+  "launcher": "run-fast.sh"
+}

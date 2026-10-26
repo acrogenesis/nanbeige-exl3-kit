@@ -1,0 +1,58 @@
+{
+  "model": "Nanbeige/Nanbeige4.3-33B",
+  "revision": "c1093c501cc6460427c0ac634db7223d0450c0ee",
+  "model_path": "${HOME}/.cache/huggingface/hub/models--Nanbeige--Nanbeige4.3-33B/snapshots/c1093c501cc6460427c0ac634db7223d0450c0ee",
+  "model_bytes": 66260066995,
+  "dtype": "bfloat16",
+  "context": 4096,
+  "kv_cache_bytes": 1073741824,
+  "max_num_seqs": 1,
+  "max_num_batched_tokens": 2048,
+  "prefix_caching": false,
+  "enforce_eager": true,
+  "host": "127.0.0.1",
+  "port": 18733,
+  "warmup": {
+    "prompt_tokens": 64,
+    "output_tokens": 8
+  },
+  "measurements": [
+    {
+      "prompt_tokens": 512,
+      "output_tokens": 64,
+      "repeats": 3
+    },
+    {
+      "prompt_tokens": 2048,
+      "output_tokens": 64,
+      "repeats": 1
+    }
+  ],
+  "variants": {
+    "prefetch": {
+      "offload_backend": "prefetch",
+      "offload_group_size": 3,
+      "offload_num_in_group": 2,
+      "offload_prefetch_step": 1
+    },
+    "uva": {
+      "offload_backend": "uva",
+      "cpu_offload_gb": 38
+    }
+  },
+  "created_at": "2026-10-26T03:54:07.401215+00:00",
+  "startup_memory_limit_GiB": 80,
+  "startup_failure": "Initial prefetch3of4layers launch reached80GiB cgroup memory limit after weights read, before inference. Code inspection shows post-load processing temporarily retains an additional host copy. Reduced prefetch offload fraction to2of3layers and matched UVA host budget38GiB; retained failure logs.",
+  "prefetch_loader_workaround": "Benchmark-local LowPeakWorker skips device_loading_context only for exact UnquantizedLinearMethod with verified no-op post-load implementation on CUDA; decoding and weights unchanged. Stock prefetch failed at80/90GiB initlimits; logs preserved.",
+  "failed_prefetch_startup_limits_GiB": [
+    80,
+    90
+  ],
+  "observed_placements": {
+    "uva_host_weights_GiB": 38.23,
+    "uva_gpu_model_GiB": 23.61,
+    "prefetch_host_weights_decimal_GB": 40.1803,
+    "prefetch_static_buffer_decimal_GB": 1.1818
+  },
+  "completed_at": "2026-10-26T04:26:02.089593+00:00"
+}

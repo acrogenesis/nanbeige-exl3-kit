@@ -1,0 +1,8 @@
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'LlamaTokenizer'. 
+The class this function is called from is 'PreTrainedTokenizerFast'.
+{"index": 0, "measured": false, "input_tokens": 2842, "output_tokens": 2048, "output_tokens_s": 111.95555243415971, "prefill_tokens_s": 2225.7214827970847, "ttft_ms": 1353.5814710048726}
+{"index": 1, "measured": true, "input_tokens": 2842, "output_tokens": 2048, "output_tokens_s": 116.92036447751205, "prefill_tokens_s": 3127.343850851438, "ttft_ms": 926.3510440068785}
+{"index": 2, "measured": true, "input_tokens": 2842, "output_tokens": 2048, "output_tokens_s": 116.5682038937019, "prefill_tokens_s": 3139.312678673622, "ttft_ms": 922.9199449910084}
+{"index": 3, "measured": true, "input_tokens": 2842, "output_tokens": 2048, "output_tokens_s": 117.1044738215046, "prefill_tokens_s": 3130.0332292283188, "ttft_ms": 926.2358980049612}
+COMPLETE fast {'output_tokens_s': 116.92036447751205, 'prefill_tokens_s': 3130.0332292283188, 'prompt_tokens_per_ttft_s': 3068.332814698116, 'ttft_ms': 926.2358980049612, 'wall_s': 18.43403952900553, 'total_tokens_s': 265.27012662122695}
