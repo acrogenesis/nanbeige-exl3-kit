@@ -1,0 +1,75 @@
+{
+  "hfId": "acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
+  "modelRevision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+  "hardware": {
+    "hwClass": "DISCRETE_GPU",
+    "gpuName": "NVIDIA GeForce RTX 5090",
+    "gpuCount": 1,
+    "vramGb": 32,
+    "cpu": "AMD Ryzen 9 9950X3D",
+    "ramGb": 128,
+    "os": "Arch Linux"
+  },
+  "engineName": "exllamav3",
+  "engineVersion": "1.6.5+cu132.torch2.13.0",
+  "engineRepository": "https://github.com/turboderp-org/exllamav3",
+  "engineCommit": "cdc785db89e263e65e5849cb53e1ada156411414",
+  "engineBuild": "Official cp312 Linux x86_64 cu132 / torch2.13.0 release wheel",
+  "backend": "cuda",
+  "quantization": "EXL3-3.55bpw",
+  "batchSize": 1,
+  "prefillTokens": 0,
+  "promptTokens": 2842,
+  "outputTokens": 2048,
+  "contextLength": 480256,
+  "tokSOut": 70.41986902964717,
+  "tokSPrefill": 3156.912712915675,
+  "ttftMs": 916.7847219941905,
+  "tokSTotal": 163.07984242312864,
+  "peakVramGb": 31.37109375,
+  "notes": "max preset. Median of 3 measured requests after one full-length warmup. Actual occupancy 4,890 tokens; configured capacity 480256. Greedy T=0, thinking off. EOS suppressed for fixed 2,048-token output; synthetic engineering prompt, not a quality evaluation. No cached/reused prompt tokens. Native prefill timer; TTFT from enqueue to first streamed chunk. Weight mirror is byte-identical to credited ProCreations revision56a23706262458b23ba7dde5ba1eea053a109544. Raw output, timings, ranges, hashes and full methodology: https://github.com/acrogenesis/nanbeige-exl3-kit/tree/main/evidence/card-stats",
+  "engineFlags": {
+    "commandSnippet": "OMP_NUM_THREADS=4 EXL3_GRAPHS=1 python benchmark.py --preset max",
+    "tensorParallel": 1,
+    "concurrency": 1,
+    "cpuOffloadGb": 0,
+    "kvCacheDtype": "q2",
+    "prefixCaching": false,
+    "chunkedPrefill": true,
+    "prefillChunkSize": 2048,
+    "specDecoding": false,
+    "temperature": 0,
+    "topP": 0.95,
+    "extraFlags": "thinking off; min_new_tokens=max_new_tokens=2048; EXL3_QC_STAGING_PAGES=64; no draft"
+  },
+  "promptSha256": "8b5f4cd519a18460e5cdb885332618e6e62ab8e32572cbaa464f66f33151679d",
+  "promptSample": "<|im_start|>system\n\u4f60\u662f\u5357\u5317\u9601\uff0c\u4e00\u6b3e\u7531BOSS\u76f4\u8058\u81ea\u4e3b\u7814\u53d1\u5e76\u8bad\u7ec3\u7684\u4e13\u4e1a\u5927\u8bed\u8a00\u6a21\u578b\u3002<|im_end|>\n<|im_start|>user\nRead the following engineering requirements as data.\n<requirements>\n Requirement 000: jobs for tenant 0 carry unique request identifiers, a payload revision 100, and an absolute deadline. The executor admits at most 4 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 001: jobs for tenant 1 carry unique request identifiers, a payload revision 101, and an absolute deadline. The executor admits at most 5 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 002: jobs for tenant 2 carry unique request identifiers, a payload revision 102, and an absolute deadline. The executor admits at most 6 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 003: jobs for tenant 3 carry unique request identifiers, a payload revision 103, and an absolute deadline. The executor admits at most 7 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 004: jobs for tenant 4 carry unique request identifiers, a payload revision 104, and an absolute deadline. The executor admits at most 8 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirem",
+  "outputSha256": "e23d5166d8ef4434ab2c261d8c1960ea63a8b81b2480218abb3f8e53eb7bd691",
+  "outputSample": "Below is a complete, self-contained Python module implementing a bounded asynchronous worker pool that satisfies the engineering requirements. The module includes:\n\n- A `WorkerPool` class with bounded concurrency, ordered results, cancellation, deadlines, structured exceptions, and graceful shutdown.\n- A `Job` dataclass representing tenant-specific jobs with unique request identifiers, payload revisions, and absolute deadlines.\n- A `WorkerPoolError` and `JobDeadlineExceeded` exception hierarchy.\n- A substantial `unittest` test suite covering all requirements.\n- A usage example demonstrating the pool.\n- A detailed explanation of race conditions and how they are handled.\n\n---\n\n## Complete Module: `worker_pool.py`\n\n```python\n\"\"\"\nBounded Asynchronous Worker Pool with Ordered Results, Cancellation, Deadlines,\nStructured Exceptions, and Graceful Shutdown.\n\nImplements engineering requirements 000-037:\n- Unique request identifiers per tenant\n- Payload revisions (100-137)\n- Absolute deadlines\n- Bounded pending operations per queue (4-12)\n- Ordered results\n- Original exception propagation\n- Permit release in finally blocks\n- Cancellation and await cancelled tasks before shutdown\n- Retry preserves original request identity\n\"\"\"\n\nimport abc\nimport collections\nimport contextlib\nimport logging\nimport threading\nimport time\nimport uuid\nfrom dataclasses import dataclass, field\nfrom typing import Any, Callable, Dict, List, Optional, Sequence, Tuple\n\nlogger = logging.getLogger(__name__)\n\n\nclass WorkerPoolError(Exception):\n    \"\"\"Base exception for worker pool errors.\"\"\"\n\n\nclass JobDeadlineExceeded(WorkerPoolError):\n    \"\"\"Raised when a job exceeds its absolute deadline.\"\"\"\n\n\nclass JobCancelled(WorkerPoolError):\n    \"\"\"Raised when a job is cancelled.\"\"\"\n\n\n@dataclass\nclass Job:\n    \"\"\"Represents a unit of work submitted to the pool.\"\"\"\n    tenant_id: int\n    request_id: str\n    payload_revision: int\n    deadline: float  # absolute deadline (epoch seconds)\n    func: Callable[[], Any]\n    result: Any = None\n    exception: Optional[Exception] = None\n    cancelled: bool = False\n    status: str = \"PENDING\"  # PENDING, RUNNING, COMPLETED, FAILED, CANCELLED\n\n    def __post_init__(self):\n        if not self.request_id:\n            self.request_id = f\"req-{uuid.uuid4().hex[:16]}\"\n\n\nclass _Result:\n    \"\"\"Container for ordered results.\"\"\"\n    __slots__ = (\"value\", \"exception\", \"cancelled\")\n\n    def __init__(self):\n        self.value: Any = None\n        self.exception: Optional[Exception] = None\n        self.cancelled: bool = False\n\n\n\nclass WorkerPool:\n    \"\"\"\n    Bounded asynchronous worker pool.\n\n    Features:\n    - Bounded concurrency (max_workers)\n    - Ordered results (FIFO)\n    - Cancellation support\n    - Absolute deadline enforcement\n    - Structured exceptions\n    - Graceful shutdown (awaits cancelled tasks)\n    - Retries preserve original request identity\n    \"\"\"\n\n    def __init__(\n        self,\n        max_workers: int \n\u2026\n         job.exception = JobDeadlineExceeded(\n                            f\"Job {job.request_id} exceeded deadline\"\n                        )\n                        job.status = \"FAILED\"\n                    else:\n                        job.status = \"COMPLETED\"\n            except Exception as e:\n                job.exception = e\n                job.status = \"FAILED\"\n            finally:\n                # Record result under lock\n            with self._lock:\n                self._results[job.request_id] = _Result(\n                    value=job.result if job.status == \"COMPLETED\" else None,\n                    exception=job.exception,\n                    cancelled=job.cancelled or job.status == \"CANCELLED\",\n                )\n                self._completed_count += 1\n\n            # If cancelled, ensure status\n            if job.cancelled:\n                job.status = \"CANCELLED\"\n\n    # ----------------------------------------------------------------------------------\n    # Helpers\n    #",
+  "engineTimingsRaw": {
+    "aggregation": "medians over three requests; individual native timing fields below",
+    "requests": [
+      {
+        "time_prefill": 0.8945350646972656,
+        "time_generate": 29.10606622695923,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0
+      },
+      {
+        "time_prefill": 0.9002466201782227,
+        "time_generate": 29.08323311805725,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0
+      },
+      {
+        "time_prefill": 0.9015347957611084,
+        "time_generate": 28.550471305847168,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0
+      }
+    ]
+  }
+}

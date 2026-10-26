@@ -1,0 +1,81 @@
+{
+  "hfId": "acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw",
+  "modelRevision": "d96b78f8af518f7f347da7f8919c29f10c8efeea",
+  "hardware": {
+    "hwClass": "DISCRETE_GPU",
+    "gpuName": "NVIDIA GeForce RTX 5090",
+    "gpuCount": 1,
+    "vramGb": 32,
+    "cpu": "AMD Ryzen 9 9950X3D",
+    "ramGb": 128,
+    "os": "Arch Linux"
+  },
+  "engineName": "exllamav3",
+  "engineVersion": "1.6.5+cu132.torch2.13.0",
+  "engineRepository": "https://github.com/turboderp-org/exllamav3",
+  "engineCommit": "cdc785db89e263e65e5849cb53e1ada156411414",
+  "engineBuild": "Official cp312 Linux x86_64 cu132 / torch2.13.0 release wheel",
+  "backend": "cuda",
+  "quantization": "EXL3-3.55bpw",
+  "batchSize": 1,
+  "prefillTokens": 0,
+  "promptTokens": 2842,
+  "outputTokens": 2048,
+  "contextLength": 8192,
+  "tokSOut": 116.92036447751205,
+  "tokSPrefill": 3130.0332292283188,
+  "ttftMs": 926.2358980049612,
+  "tokSTotal": 265.27012662122695,
+  "peakVramGb": 20.2314453125,
+  "notes": "fast preset. Median of 3 measured requests after one full-length warmup. Actual occupancy 4,890 tokens; configured capacity 8192. Greedy T=0, thinking off. EOS suppressed for fixed 2,048-token output; synthetic engineering prompt, not a quality evaluation. No cached/reused prompt tokens. Native prefill timer; TTFT from enqueue to first streamed chunk. Weight mirror is byte-identical to credited ProCreations revision56a23706262458b23ba7dde5ba1eea053a109544. Raw output, timings, ranges, hashes and full methodology: https://github.com/acrogenesis/nanbeige-exl3-kit/tree/main/evidence/card-stats",
+  "engineFlags": {
+    "commandSnippet": "OMP_NUM_THREADS=4 EXL3_GRAPHS=1 python benchmark.py --preset fast",
+    "tensorParallel": 1,
+    "concurrency": 1,
+    "cpuOffloadGb": 0,
+    "kvCacheDtype": "fp16",
+    "prefixCaching": false,
+    "chunkedPrefill": true,
+    "prefillChunkSize": 2048,
+    "specDecoding": true,
+    "temperature": 0,
+    "topP": 0.95,
+    "extraFlags": "thinking off; min_new_tokens=max_new_tokens=2048; fresh page tables; sparse draft vocab 16384",
+    "specMethod": "DFlash2",
+    "specModel": "ProCreations/Nanbeige4.3-33B-DFlash2",
+    "specNumTokens": 7,
+    "specDraftTokens": 20391,
+    "specAcceptedTokens": 3231,
+    "specAcceptanceRate": 0.15845225834927174
+  },
+  "promptSha256": "8b5f4cd519a18460e5cdb885332618e6e62ab8e32572cbaa464f66f33151679d",
+  "promptSample": "<|im_start|>system\n\u4f60\u662f\u5357\u5317\u9601\uff0c\u4e00\u6b3e\u7531BOSS\u76f4\u8058\u81ea\u4e3b\u7814\u53d1\u5e76\u8bad\u7ec3\u7684\u4e13\u4e1a\u5927\u8bed\u8a00\u6a21\u578b\u3002<|im_end|>\n<|im_start|>user\nRead the following engineering requirements as data.\n<requirements>\n Requirement 000: jobs for tenant 0 carry unique request identifiers, a payload revision 100, and an absolute deadline. The executor admits at most 4 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 001: jobs for tenant 1 carry unique request identifiers, a payload revision 101, and an absolute deadline. The executor admits at most 5 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 002: jobs for tenant 2 carry unique request identifiers, a payload revision 102, and an absolute deadline. The executor admits at most 6 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 003: jobs for tenant 3 carry unique request identifiers, a payload revision 103, and an absolute deadline. The executor admits at most 7 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirement 004: jobs for tenant 4 carry unique request identifiers, a payload revision 104, and an absolute deadline. The executor admits at most 8 pending operations per queue, records ordered results, propagates original exceptions, releases permits in finally blocks, and awaits cancelled tasks before shutdown. Retries must preserve the original request identity.\nRequirem",
+  "outputSha256": "18fa538015d42e19e3621e374bdc50ff21322c6d035b3c5a37eec4dcc6a427d9",
+  "outputSample": "Here is the complete implementation of the bounded asynchronous Python worker pool, along with a substantial `unittest` test suite, a usage example, and a detailed explanation of race conditions.\n\n---\n\n### Engineering Requirements Summary\n\nThe requirements specify tenant-specific job configurations across 38 requirements (`Requirement 000` to `Requirement 037`):\n- **Job Attributes**: Each tenant's jobs carry unique request identifiers, a payload revision (`100 + tenant_index % 100` pattern across requirement blocks), and an absolute deadline.\n- **Bounded Queue Capacity**: The maximum pending operations per queue varies per requirement/tenant block:\n  - Requirement blocks 0\u20138 (Tenants 0\u20138): capacities `4, 5, 6, 7, 8, 9, 10, 11, 12`.\n  - Requirement blocks 9\u201316 (Tenants 9\u201316): capacities `4, 5, 6, 7, 8, 9, 10, 11`.\n  - Requirement blocks 17\u201325 (Tenants 0\u20138): capacities `12, 4, 5, 6, 7, 8, 9, 10, 11`.\n  - Requirement blocks 26\u201333 (Tenants 9\u201316): capacities `12, 4, 5, 6, 7, 8, 9, 10`.\n  - Requirement blocks 34\u201337 (Tenants 0\u20133): capacities `11, 12, 4, 5`.\n- **Execution Semantics**:\n  - Ordered results recording.\n  - Original exception propagation.\n  - Permit release in `finally` blocks.\n  - Awaiting cancelled tasks before shutdown.\n  - Retries preserving original request identity.\n\n---\n\n### 1. Complete Module Implementation (`worker_pool.py`)\n\n```python\n\"\"\"\nBounded Asynchronous Python Worker Pool\n========================================\nImplements a thread-safe, bounded asynchronous worker pool satisfying:\n- Bounded pending queue capacity per tenant/requirement.\n- Ordered result recording.\n- Absolute deadline enforcement and cancellation.\n- Structured exception propagation.\n- Permit release in finally blocks.\n- Graceful shutdown awaiting cancelled tasks.\n- Retry support preserving original request identity.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport asyncio\nimport contextlib\nimport logging\nimport threading\nimport time\nfrom abc import ABC, abstractmethod\nfrom dataclasses import dataclass, field\nfrom enum import Enum\nfrom typing import Any, Callable, Dict, List, Optional, Sequence, Tuple\n\nlogger = logging.getLogger(\"WorkerPool\")\n\n\nclass TaskStatus(Enum):\n    PENDING = \"PENDING\"\n    RUNNING = \"RUNNING\"\n    COMPLETED = \"COMPLETED\"\n    FAILED = \"FAILED\"\n    CANCELLED = \"CANCELLED\"\n    DEADLINED = \"DEADLINED\"\n\n\nclass WorkerPoolError(Exception):\n    \"\"\"Base exception for worker pool errors.\"\"\"\n    pass\n\n\nclass QueueFullError(WorkerPoolError):\n    \"\"\"Raised when attempting to enqueue a job into a full bounded queue.\"\"\"\n    pass\n\n\nclass DeadlineExceededError(WorkerPoolError):\n    \"\"\"Raised when a job exceeds its absolute deadline.\"\"\"\n    pass\n\n\nclass TaskCancelledError(WorkerPoolError):\n    \"\"\"Raised when a task is explicitly cancelled.\"\"\"\n    pass\n\n\n@dataclass(slots=True)\nclass Job:\n    \"\"\"Represents a unit of work submitted to the worker pool.\"\"\"\n    request_id: str\n    tenant_id: int\n    payload_revisio\n\u2026\nerPool(AsyncWorkerPool):\n    \"\"\"\n    Bounded asynchronous worker pool.\n\n    Features:\n      - Per-tenant bounded queues based on requirement capacities.\n      - Worker threads processing jobs.\n      - Monotonic deadline enforcement.\n      - Ordered result collection.\n      - Cancellation support.\n      - Permit release in finally blocks.\n      - Graceful shutdown awaiting cancelled tasks.\n    \"\"\"\n\n    # Requirement capacity mapping: requirement_index -> capacity\n    # Requirement blocks define tenant-specific capacities.\n    _REQUIREMENT_CAPACITIES: Dict[int, int] = {\n        # Req 000-008 (Tenants 0-8)\n        0: 4, 1: 5, 2: 6, 3: 7, 4: 8, 5: 9, 6: 10, 7: 11, 8: 12,\n        # Req 009-016 (Tenants 9-16)\n        9: 4, 10: 5, 11: 6, 12: 7, 13: 8, 14: 9, 15: 10, 16: 11,\n        # Req 017-025 (Tenants 0-8)\n        17: 12, 18: 4, 19: 5, 20: 6, 21: 7, 22: 8, 23: 9, 24: 10, 25: 11,\n        # Req 026-033 (Tenants 9-16)\n        26: 12, 27: 4, 28: 5, 29: 6, 30: 7, 31: 8, 32: 9, 33: 10,\n        #",
+  "engineTimingsRaw": {
+    "aggregation": "medians over three requests; individual native timing fields below",
+    "requests": [
+      {
+        "time_prefill": 0.9087584018707275,
+        "time_generate": 17.523070096969604,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0
+      },
+      {
+        "time_prefill": 0.9052937030792236,
+        "time_generate": 17.57613253593445,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0
+      },
+      {
+        "time_prefill": 0.9079775810241699,
+        "time_generate": 17.49644708633423,
+        "new_tokens": 2048,
+        "prompt_tokens": 2842,
+        "cached_tokens": 0
+      }
+    ]
+  }
+}

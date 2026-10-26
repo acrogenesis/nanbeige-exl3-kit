@@ -1,10 +1,12 @@
 {
   "sha256": {
+    ".gitattributes": "c9b5db4c5467d1ad7ddefb67a4410d97d9137c1794bcaff416e11193fcba9256",
     ".gitignore": "290871a862e5491495154290bab46c846b37c32b9c497bfa169fb2f25b9291ec",
     "LICENSE": "1df6ecfbcc071357ccffd5c5c0449a6364d542b01c3b6b48fcd26115c71ca1c4",
     "MODEL_LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "NOTICE": "af226324352bcce2a4148d0f654f2e79c6deedc8420584d946607694294ea36f",
-    "README.md": "3946f09d5d347a049917dd9557c9ac9e7199479e474b2d534cb64b9b6e4db0b7",
+    "PUBLICATION.json": "aecab692cccec78e4ae9d1284a0e429e2554a146cb4bbb75b38ecbf65bf55d56",
+    "README.md": "f780ec7bffd63ae49022c548997c25d6d9dfe42c20028b660ce7093b9a1a3266",
     "bench_exl3.py": "a1d7def3bd5b605a8ebf59754c4a1d86835f2c4874d975a87d429bd29bd824f0",
     "benchmark.py": "7b4c6a7d4e5d273d7f3744715bfadbde2498421d1fbfa8230ec9c80bd296785c",
     "benchmark_full.py": "8a538fdcabec5073e110378a2db9cf6209dc717b13b28133d22aa39a9e0b2b24",
@@ -63,11 +65,16 @@
     "models.lock.json": "956cdc47a688f2b7bbf0b20660af9eae5284014728529ab60476f4ab02735a67",
     "profiles/README.md": "d37657f896a6c68210dd08c1627f3ab55b9225b2d1196ebf7497b9b2234de60e",
     "profiles/sparse-seed.pt": "cfa21c7c9c0b7dccaf8e2f181c85c94c1bbb69ad2ad1303480c281f8608fc6c9",
+    "publication/lmx-fast-payload.json": "67c8c7c0ad056b2194adb9aa5b3c219acc8d847b1682dde7ba193acbc21f1187",
+    "publication/lmx-full-payload.json": "fee52dff3c600b155210d0539aaa63e2f060abb2d4bacfc884fd8a19450a641d",
+    "publication/lmx-max-payload.json": "d6508a23acc1f075de6ef8b35d7c9a7e8df89e0fed0e2d75d51851283ff8c468",
+    "publication/lmx-report-payload.json": "ebfb482ffec495d257f0a7eb6903cade7439f425837007b85e24c8dc5e8ec117",
+    "publication/lmx-report.md": "ef69c34e0a8457717da5e928747985c882bf9be916aa3da91dbf47f0f3fc8532",
     "requirements.txt": "caf8a1726218116d3c968ad51bc6b46fc58155311d7ba1291f150b24208f6df3",
     "run-fast.sh": "8e2f8222f1861d31306217a249f827da9eaeb066b33dc6ee30181867f138c225",
     "run-max.sh": "b52fc454c89ea0bb1fc69df82fe1e1f2849575ff6b5f928a7e63615aed2cdc26",
     "runtime_helpers.py": "37d6b3dc54e9e9ba86ac1cffc6bcf2f6b35b51eb01adad065758f1eb92d093f1",
     "setup.sh": "aabbb04ca7b6cfb0f61b7bd4c90b5992282aabe41fd2f01813533b63bea6b85c"
   },
-  "note": "Manifest excludes its own hash and ignored run outputs. Evidence retains token-level measurements with machine home paths replaced."
+  "note": "Excludes itself and ignored outputs; machine home paths in archived evidence are replaced with ${HOME}."
 }

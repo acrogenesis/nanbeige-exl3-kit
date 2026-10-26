@@ -24,6 +24,10 @@ The near-full test actually occupied 480,000 tokens and retrieved all three exac
 
 An earlier five-prompt, three-seed suite measured **103.40 median / 101.77 pooled output tok/s** with 89–103 input tokens and 384 output tokens, 8K FP16 KV, DFlash2 sparse16K and temperature 0.6. Do not transfer that aggregate to all prompts or context lengths. Original BF16 RAM offload measured 0.728 tok/s (UVA) and 1.309 tok/s (prefetch) at 512 input / 64 output; the report records placement and startup differences. Those poor results remain available.
 
+## Published results
+
+[LocalMaxxing report and attached results](https://www.localmaxxing.com/en/models/acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw/reports/cmvpehkhi0264ng01auzavjoo) contain three approved speed entries with the exact precision, settings and raw evidence linked. [PUBLICATION.json](PUBLICATION.json) records the model commit, engine revision, run IDs and readback verification; publication/ retains the submitted non-secret payloads.
+
 ## Install and run
 
 The supplied wheel was tested on NVIDIA Linux x86_64 with Python 3.12, CUDA 13.2 / torch 2.13.0 and a compatible installed NVIDIA driver. Other platforms were not tested by this kit.
