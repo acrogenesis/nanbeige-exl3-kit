@@ -6,7 +6,7 @@ Run the credited Nanbeige4.3-33B EXL3 3.55bpw quantization on a single RTX 5090 
 - Quantization: [ProCreations/Nanbeige4.3-33B-EXL3](https://huggingface.co/ProCreations/Nanbeige4.3-33B-EXL3/tree/56a23706262458b23ba7dde5ba1eea053a109544).
 - Byte-identical model mirror: [acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw](https://huggingface.co/acrogenesis/Nanbeige4.3-33B-EXL3-3.55bpw).
 - Optional drafter: [ProCreations/Nanbeige4.3-33B-DFlash2](https://huggingface.co/ProCreations/Nanbeige4.3-33B-DFlash2).
-- Engine: stock [ExLlamaV3 1.6.5](https://github.com/turboderp-org/exllamav3/tree/v1.6.5), with an [unchanged source fork pinned to the tested release](https://github.com/acrogenesis/exllamav3/tree/nanbeige-tested-v1.6.5). The engine is separate from this kit and from Strata.
+- Engine: stock [ExLlamaV3 1.6.5](https://github.com/turboderp-org/exllamav3/tree/v1.6.5) ([tested source commit](https://github.com/turboderp-org/exllamav3/tree/cdc785db89e263e65e5849cb53e1ada156411414)). The engine is separate from this kit and from Strata.
 
 ## Measured stats
 

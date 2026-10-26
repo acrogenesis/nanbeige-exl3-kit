@@ -29,7 +29,6 @@
   },
   "engine": {
     "source": "https://github.com/turboderp-org/exllamav3",
-    "mirror": "https://github.com/acrogenesis/exllamav3/tree/nanbeige-tested-v1.6.5",
     "commit": "cdc785db89e263e65e5849cb53e1ada156411414",
     "modified": false
   },
